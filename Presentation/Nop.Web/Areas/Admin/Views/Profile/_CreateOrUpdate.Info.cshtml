@@ -1,0 +1,363 @@
+@model ProfileModel
+
+<div class="card-body">    
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="ApplicantId" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="ApplicantId" asp-required="true" />
+            <span asp-validation-for="ApplicantId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="GivenName" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="GivenName" />
+            <span asp-validation-for="GivenName"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="FamilyName" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="FamilyName" />
+            <span asp-validation-for="FamilyName"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="DateOfBirth" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="DateOfBirth" />
+            <span asp-validation-for="DateOfBirth"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="GenderCode" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="GenderCode" />
+            <span asp-validation-for="GenderCode"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="PrimaryCitizenship" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="PrimaryCitizenship" />
+            <span asp-validation-for="PrimaryCitizenship"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Citizenship1" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Citizenship1" />
+            <span asp-validation-for="Citizenship1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Citizenship2" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Citizenship2" />
+            <span asp-validation-for="Citizenship2"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Email" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Email" asp-required="true" />
+            <span asp-validation-for="Email"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Mobile1" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Mobile1" />
+            <span asp-validation-for="Mobile1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Mobile2" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Mobile2" />
+            <span asp-validation-for="Mobile2"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="WhtasppMobile" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="WhtasppMobile" />
+            <span asp-validation-for="WhtasppMobile"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1Line1" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address1Line1" />
+            <span asp-validation-for="Address1Line1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1Line2" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address1Line2" />
+            <span asp-validation-for="Address1Line2"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1City" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address1City" />
+            <span asp-validation-for="Address1City"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1StateProvince" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address1StateProvince" />
+            <span asp-validation-for="Address1StateProvince"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1PostalCode" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address1PostalCode" />
+            <span asp-validation-for="Address1PostalCode"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1Country" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address1Country" />
+            <span asp-validation-for="Address1Country"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2Line1" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address2Line1" />
+            <span asp-validation-for="Address2Line1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2Line2" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address2Line2" />
+            <span asp-validation-for="Address2Line2"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2City" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address2City" />
+            <span asp-validation-for="Address2City"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2StateProvince" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address2StateProvince" />
+            <span asp-validation-for="Address2StateProvince"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2PostalCode" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address2PostalCode" />
+            <span asp-validation-for="Address2PostalCode"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2Country" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address2Country" />
+            <span asp-validation-for="Address2Country"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="MaritalStatusCode" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="MaritalStatusCode" />
+            <span asp-validation-for="MaritalStatusCode"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="HasSponsor" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="HasSponsor" />
+            <span asp-validation-for="HasSponsor"></span>
+        </div>
+    </div>
+    @if (Model.Id > 0)
+    {
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="CreatedAt" />
+            </div>
+            <div class="col-md-9">
+                <div class="form-text-row">@Model.CreatedAt</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="UpdatedAt" />
+            </div>
+            <div class="col-md-9">
+                <div class="form-text-row">@Model.UpdatedAt</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="CreatedBy" />
+            </div>
+            <div class="col-md-9">
+                <div class="form-text-row">@Model.CreatedBy</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="UpdatedBy" />
+            </div>
+            <div class="col-md-9">
+                <div class="form-text-row">@Model.UpdatedBy</div>
+            </div>
+        </div>
+    }
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="AadharNo" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="AadharNo" />
+            <span asp-validation-for="AadharNo"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="FacebookId1" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="FacebookId1" />
+            <span asp-validation-for="FacebookId1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="FacebookId2" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="FacebookId2" />
+            <span asp-validation-for="FacebookId2"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="InstagramId1" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="InstagramId1" />
+            <span asp-validation-for="InstagramId1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="InstagramId2" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="InstagramId2" />
+            <span asp-validation-for="InstagramId2"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="LinkedInURL" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="LinkedInURL" />
+            <span asp-validation-for="LinkedInURL"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="TwitterId" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="TwitterId" />
+            <span asp-validation-for="TwitterId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="PhotoId" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="PhotoId" />
+            <span asp-validation-for="PhotoId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="ResumeId" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="ResumeId" />
+            <span asp-validation-for="ResumeId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+            <button type="submit" name="save" class="btn btn-primary">
+                <i class="far fa-floppy-disk"></i>
+                @T("Admin.Common.Save")
+            </button>
+        </div>
+    </div>    
+</div>

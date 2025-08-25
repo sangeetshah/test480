@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="English">  
+  <!--Profile-->
+  <LocaleResource Name="Admin.Profile">
+    <Value>Profile</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Search">
+    <Value>Search</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Info">
+    <Value>Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.ApplicantId">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.ApplicantId.Hint">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.ApplicantId.Required">
+    <Value>The applicant id is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.ApplicantId.NotExists">
+    <Value>Applicant id does not exists.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.ApplicantId.Exists">
+    <Value>Applicant id exists.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.GivenName">
+    <Value>Given name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.GivenName.Hint">
+    <Value>Given name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.FamilyName">
+    <Value>Family name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.FamilyName.Hint">
+    <Value>Family name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.DateOfBirth">
+    <Value>Date of birth</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.DateOfBirth.Hint">
+    <Value>Date of birth</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.GenderCode">
+    <Value>Gender code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.GenderCode.Hint">
+    <Value>Gender code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.PrimaryCitizenship">
+    <Value>Primary citizenship</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.PrimaryCitizenship.Hint">
+    <Value>Primary citizenship</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Citizenship1">
+    <Value>Citizenship 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Citizenship1.Hint">
+    <Value>Citizenship 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Citizenship2">
+    <Value>Citizenship 2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Citizenship2.Hint">
+    <Value>Citizenship 2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Email">
+    <Value>Email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Email.Hint">
+    <Value>Email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Email.Required">
+    <Value>Email is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Mobile1">
+    <Value>Mobile 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Mobile1.Hint">
+    <Value>Mobile 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Mobile2">
+    <Value>Mobile 2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Mobile2.Hint">
+    <Value>Mobile 2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.WhtasppMobile">
+    <Value>Whtaspp mobile</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.WhtasppMobile.Hint">
+    <Value>Whtaspp mobile</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1Line1">
+    <Value>Address1 line 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1Line1.Hint">
+    <Value>Address1 line 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1Line2">
+    <Value>Address1 line 2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1Line2.Hint">
+    <Value>Address1 line 2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1City">
+    <Value>Address1 city</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1City.Hint">
+    <Value>Address1 city</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1StateProvince">
+    <Value>Address1 state province</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1StateProvince.Hint">
+    <Value>Address1 state province</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1PostalCode">
+    <Value>Address1 postal code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1PostalCode.Hint">
+    <Value>Address1 postal code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1Country">
+    <Value>Address1 country</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address1Country.Hint">
+    <Value>Address1 country</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2Line1">
+    <Value>Address2 line 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2Line1.Hint">
+    <Value>Address2 line 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2Line2">
+    <Value>Address2 line 2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2Line2.Hint">
+    <Value>Address2 line 2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2City">
+    <Value>Address2 city</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2City.Hint">
+    <Value>Address2 city</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2StateProvince">
+    <Value>Address2 state province</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2StateProvince.Hint">
+    <Value>Address2 state province</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2PostalCode">
+    <Value>Address2 postal code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2PostalCode.Hint">
+    <Value>Address2 postal code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2Country">
+    <Value>Address2 country</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.Address2Country.Hint">
+    <Value>Address2 country</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.MaritalStatusCode">
+    <Value>Marital status code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.MaritalStatusCode.Hint">
+    <Value>Marital status code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.HasSponsor">
+    <Value>Has sponsor</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.HasSponsor.Hint">
+    <Value>Has sponsor</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.CreatedAt">
+    <Value>Create at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.CreatedAt.Hint">
+    <Value>Create at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.UpdatedAt">
+    <Value>Updated at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.UpdatedAt.Hint">
+    <Value>Updated at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.CreatedBy">
+    <Value>Created by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.CreatedBy.Hint">
+    <Value>Created by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.UpdatedBy">
+    <Value>Updated by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.UpdatedBy.Hint">
+    <Value>Updated by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.AadharNo">
+    <Value>Aadhar no</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.AadharNo.Hint">
+    <Value>Aadhar no</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.FacebookId1">
+    <Value>Facebook id1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.FacebookId1.Hint">
+    <Value>Facebook id1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.FacebookId2">
+    <Value>Facebook id2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.FacebookId2.Hint">
+    <Value>Facebook id2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.InstagramId1">
+    <Value>Instagram id1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.InstagramId1.Hint">
+    <Value>Instagram id1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.InstagramId2">
+    <Value>Instagram id2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.InstagramId2.Hint">
+    <Value>Instagram id2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.LinkedInURL">
+    <Value>LinkedIn URL</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.LinkedInURL.Hint">
+    <Value>LinkedIn URL</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.TwitterId">
+    <Value>Twitter id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.TwitterId.Hint">
+    <Value>Twitter id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.PhotoId">
+    <Value>Photo</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.PhotoId.Hint">
+    <Value>Photo</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.ResumeId">
+    <Value>Resume</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.ResumeId.Hint">
+    <Value>Resume</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Created">
+    <Value>Profile created successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Updated">
+    <Value>Profile updated successfully.</Value>
+  </LocaleResource>
+  <!--Profile-->
+</Language>

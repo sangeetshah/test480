@@ -85,6 +85,15 @@ public partial class AdminMenu : IAdminMenu
                     Url = GetMenuItemUrl("Home", "Index"),
                     IconClass = "fas fa-desktop"
                 },
+                //profile
+                new()
+                {
+                    SystemName = "Profile",
+                    Title = await _localizationService.GetResourceAsync("Admin.Profile"),
+                    PermissionNames = new List<string> { StandardPermission.Profile.ACCESS_PROFILE },
+                    Url = GetMenuItemUrl("Profile", "Create"),
+                    IconClass = "fas fa-user"
+                },
                 //catalog
                 new()
                 {

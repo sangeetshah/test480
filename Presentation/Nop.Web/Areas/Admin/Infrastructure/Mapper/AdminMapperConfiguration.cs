@@ -55,6 +55,7 @@ using Nop.Web.Areas.Admin.Models.Orders;
 using Nop.Web.Areas.Admin.Models.Payments;
 using Nop.Web.Areas.Admin.Models.Plugins;
 using Nop.Web.Areas.Admin.Models.Polls;
+using Nop.Web.Areas.Admin.Models.Profiles;
 using Nop.Web.Areas.Admin.Models.Settings;
 using Nop.Web.Areas.Admin.Models.Shipping;
 using Nop.Web.Areas.Admin.Models.ShoppingCart;
@@ -110,6 +111,7 @@ public partial class AdminMapperConfiguration : Profile, IOrderedMapperProfile
         CreateTopicsMaps();
         CreateVendorsMaps();
         CreateWarehouseMaps();
+        CreateProfilesMaps();
 
         //add some generic mapping rules
         this.Internal().ForAllMaps((mapConfiguration, map) =>
@@ -1748,6 +1750,17 @@ public partial class AdminMapperConfiguration : Profile, IOrderedMapperProfile
             .ForMember(entity => entity.Address, options => options.Ignore());
         CreateMap<WarehouseModel, Warehouse>()
             .ForMember(entity => entity.AddressId, options => options.Ignore());
+    }
+
+    /// <summary>
+    /// Create profiles maps 
+    /// </summary>
+    protected virtual void CreateProfilesMaps()
+    {
+        CreateMap<Nop.Core.Domain.Profiles.Profile, ProfileModel>()
+            .ForMember(entity => entity.IsAdmin, options => options.Ignore())
+            .ForMember(entity => entity.SearchApplicantId, options => options.Ignore());
+        CreateMap<ProfileModel, Nop.Core.Domain.Profiles.Profile>();
     }
 
     #endregion

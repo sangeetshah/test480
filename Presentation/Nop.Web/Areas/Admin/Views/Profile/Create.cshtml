@@ -1,0 +1,17 @@
+﻿@model ProfileModel
+
+@{
+    //page title
+    ViewBag.PageTitle = T("Admin.Profile").Text;
+    //active menu item (system name)
+    NopHtml.SetActiveMenuItemSystemName("Profile");
+}
+
+<form asp-controller="Profile" asp-action="Create" method="post">
+    <div class="content-header clearfix">
+        <h1 class="float-left">
+            @T("Admin.Profile")
+        </h1>
+    </div>
+    @await Html.PartialAsync("_CreateOrUpdate", Model)
+</form>

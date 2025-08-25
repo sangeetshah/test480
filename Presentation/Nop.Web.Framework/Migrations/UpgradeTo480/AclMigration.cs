@@ -157,6 +157,8 @@ public class AclMigration : Migration
 
         insertMappings("EnableMultiFactorAuthentication", StandardPermission.Security.ENABLE_MULTI_FACTOR_AUTHENTICATION);
 
+        insertMappings("ManageProfile", StandardPermission.Profile.ACCESS_PROFILE);
+
         //add new permissions for vendors
         var vendorRole = _customerRoleRepository.Table
             .FirstOrDefault(x => x.IsSystemRole && x.SystemName == NopCustomerDefaults.VendorsRoleName);

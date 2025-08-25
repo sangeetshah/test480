@@ -164,5 +164,11 @@ public partial class DefaultPermissionConfigManager : IPermissionConfigManager
         new ("Public store. Access a closed store", StandardPermission.PublicStore.ACCESS_CLOSED_STORE, nameof(StandardPermission.PublicStore), NopCustomerDefaults.AdministratorsRoleName),
 
         #endregion
+
+        #region Profile
+
+        new ("Admin area. Access Profile", StandardPermission.Profile.ACCESS_PROFILE, nameof(StandardPermission.Profile), NopCustomerDefaults.AdministratorsRoleName),
+
+        #endregion
     };
 }

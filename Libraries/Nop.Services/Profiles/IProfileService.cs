@@ -10,6 +10,16 @@ public partial interface IProfileService
     /// <summary>
     /// Gets a profile
     /// </summary>
+    /// <param name="profileId">Profile identifier</param>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the profile
+    /// </returns>
+    Task<Profile> GetProfileByIdAsync(int profileId);
+
+    /// <summary>
+    /// Gets a profile
+    /// </summary>
     /// <param name="applicantId">The applicant identifier</param>
     /// <returns>
     /// A task that represents the asynchronous operation

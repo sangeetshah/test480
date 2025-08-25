@@ -28,6 +28,22 @@ public partial class ProfileService : IProfileService
     /// <summary>
     /// Gets a profile
     /// </summary>
+    /// <param name="profileId">Profile identifier</param>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the profile
+    /// </returns>
+    public virtual async Task<Profile> GetProfileByIdAsync(int profileId)
+    {
+        if (profileId == 0)
+            return null;
+
+        return await _profileRepository.GetByIdAsync(profileId);
+    }
+
+    /// <summary>
+    /// Gets a profile
+    /// </summary>
     /// <param name="applicantId">The applicant identifier</param>
     /// <returns>
     /// A task that represents the asynchronous operation

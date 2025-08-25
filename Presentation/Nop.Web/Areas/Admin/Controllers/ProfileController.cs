@@ -73,6 +73,8 @@ public partial class ProfileController : BaseAdminController
         if (existProfile != null && existProfile.Id != model.Id)
             ModelState.AddModelError(nameof(model.ApplicantId), await _localizationService.GetResourceAsync("Admin.Profile.Fields.ApplicantId.Exists"));
 
+        var currentProfile = await _profileService.GetProfileByIdAsync(model.Id);
+
         if (ModelState.IsValid)
         {
             var customer = await _workContext.GetCurrentCustomerAsync();            
@@ -92,12 +94,12 @@ public partial class ProfileController : BaseAdminController
             }
             else
             {
-                existProfile = model.ToEntity(existProfile);
+                currentProfile = model.ToEntity(currentProfile);
 
-                existProfile.UpdatedAt = DateTime.UtcNow;
-                existProfile.UpdatedBy = customer.Email;
+                currentProfile.UpdatedAt = DateTime.UtcNow;
+                currentProfile.UpdatedBy = customer.Email;
 
-                await _profileService.UpdateProfileAsync(existProfile);
+                await _profileService.UpdateProfileAsync(currentProfile);
 
                 _notificationService.SuccessNotification(await _localizationService.GetResourceAsync("Admin.Profile.Updated"));
             }
@@ -106,7 +108,7 @@ public partial class ProfileController : BaseAdminController
         }
 
         //prepare model
-        model = await _profileModelFactory.PrepareProfileModelAsync(model, existProfile);
+        model = await _profileModelFactory.PrepareProfileModelAsync(model, currentProfile);
 
         //if we got this far, something failed, redisplay form
         return View(model);

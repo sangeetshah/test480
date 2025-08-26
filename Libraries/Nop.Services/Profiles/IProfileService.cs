@@ -40,4 +40,13 @@ public partial interface IProfileService
     /// <param name="profile">Profile</param>
     /// <returns>A task that represents the asynchronous operation</returns>
     Task UpdateProfileAsync(Profile profile);
+
+    /// <summary>
+    /// Gets all profiles
+    /// </summary>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the profiles
+    /// </returns>
+    Task<IList<Profile>> GetAllProfilesAsync();
 }

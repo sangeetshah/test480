@@ -263,4 +263,130 @@
     <Value>Profile updated successfully.</Value>
   </LocaleResource>
   <!--Profile-->
+
+  <!--Passport-->
+  <LocaleResource Name="Admin.Passport">
+    <Value>Passport</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.AddNew">
+    <Value>Add a new passport</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.BackToList">
+    <Value>back to passport list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.EditPassportDetails">
+    <Value>Edit passport details</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Info">
+    <Value>Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.List.SearchApplicantId">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.List.SearchApplicantId.Hint">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.List.SearchPassportNumber">
+    <Value>Passport number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.List.SearchPassportNumber.Hint">
+    <Value>Passport number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.ApplicantId">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.ApplicantId.Hint">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.ApplicantId.Required">
+    <Value>The applicant id is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.PassportNumber">
+    <Value>Passport number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.PassportNumber.Hint">
+    <Value>Passport number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.PassportNumber.Exists">
+    <Value>Passport number already exists.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.PassportNumber.Required">
+    <Value>Passport number is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.IssuingCountry">
+    <Value>Issuing country</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.IssuingCountry.Hint">
+    <Value>Issuing country</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.IssuingCountry.Required">
+    <Value>Issuing country is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.IssueDate">
+    <Value>Issue date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.IssueDate.Hint">
+    <Value>Issue date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.ExpiryDate">
+    <Value>Expiry date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.ExpiryDate.Hint">
+    <Value>Expiry date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.DateOfBirth">
+    <Value>Date of birth</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.DateOfBirth.Hint">
+    <Value>Date of birth</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.BirthPlace">
+    <Value>Birth place</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.BirthPlace.Hint">
+    <Value>Birth place</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.PlaceOfIssue">
+    <Value>Place of issue</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.PlaceOfIssue.Hint">
+    <Value>Place of issue</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.PlaceOfIssue.Required">
+    <Value>Place of issue is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.IsPrimary">
+    <Value>Is primary</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.IsPrimary.Hint">
+    <Value>Is primary</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.UploadedAt">
+    <Value>Uploaded at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.UploadedAt.Hint">
+    <Value>Uploaded at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.UploadedBy">
+    <Value>Uploaded by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.UploadedBy.Hint">
+    <Value>Uploaded by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.FileId">
+    <Value>File</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Fields.FileId.Hint">
+    <Value>File</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Created">
+    <Value>Passport created successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Updated">
+    <Value>Passport updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Passport.Deleted">
+    <Value>Passport deleted successfully.</Value>
+  </LocaleResource>
+  <!--Passport-->
 </Language>

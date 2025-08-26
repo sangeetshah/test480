@@ -1,0 +1,113 @@
+@model PassportModel
+
+<div class="card-body">    
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="ApplicantId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="ApplicantId" asp-items="Model.AvailableApplicants" asp-required="true" />
+            <span asp-validation-for="ApplicantId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="PassportNumber" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="PassportNumber" asp-required="true" />
+            <span asp-validation-for="PassportNumber"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="IssuingCountry" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="IssuingCountry" asp-required="true" />
+            <span asp-validation-for="IssuingCountry"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="IssueDate" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="IssueDate" asp-required="true" />
+            <span asp-validation-for="IssueDate"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="ExpiryDate" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="ExpiryDate" asp-required="true" />
+            <span asp-validation-for="ExpiryDate"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="DateOfBirth" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="DateOfBirth" />
+            <span asp-validation-for="DateOfBirth"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="BirthPlace" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="BirthPlace" />
+            <span asp-validation-for="BirthPlace"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="PlaceOfIssue" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="PlaceOfIssue" asp-required="true" />
+            <span asp-validation-for="PlaceOfIssue"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="IsPrimary" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="IsPrimary" />
+            <span asp-validation-for="IsPrimary"></span>
+        </div>
+    </div>   
+    @if (Model.Id > 0)
+    {
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="UploadedAt" />
+            </div>
+            <div class="col-md-9">
+                <div class="form-text-row">@Model.UploadedAt</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="UploadedBy" />
+            </div>
+            <div class="col-md-9">
+                <div class="form-text-row">@Model.UploadedBy</div>
+            </div>
+        </div>        
+    }   
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="FileId" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="FileId" />
+            <span asp-validation-for="FileId"></span>
+        </div>
+    </div>  
+</div>

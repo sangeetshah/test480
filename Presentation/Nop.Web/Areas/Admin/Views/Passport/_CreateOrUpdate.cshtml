@@ -1,0 +1,19 @@
+﻿@model PassportModel
+
+@{
+    const string hideInfoBlockAttributeName = "PassportPage.HideInfoBlock";
+    var customer = await workContext.GetCurrentCustomerAsync();
+    var hideInfoBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideInfoBlockAttributeName);
+}
+
+<input asp-for="Id" type="hidden" />
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="form-horizontal">
+            <nop-cards id="passport-cards">                
+                <nop-card asp-name="passport-info" asp-icon="fas fa-info" asp-title="@T("Admin.Passport.Info")" asp-hide-block-attribute-name="@hideInfoBlockAttributeName" asp-hide="@hideInfoBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.Info", Model)</nop-card>
+            </nop-cards>
+        </div>
+    </div>
+</section>

@@ -17,6 +17,7 @@ using Nop.Core.Domain.Media;
 using Nop.Core.Domain.Messages;
 using Nop.Core.Domain.News;
 using Nop.Core.Domain.Orders;
+using Nop.Core.Domain.Passports;
 using Nop.Core.Domain.Polls;
 using Nop.Core.Domain.ScheduleTasks;
 using Nop.Core.Domain.Security;
@@ -52,6 +53,7 @@ using Nop.Web.Areas.Admin.Models.Messages;
 using Nop.Web.Areas.Admin.Models.MultiFactorAuthentication;
 using Nop.Web.Areas.Admin.Models.News;
 using Nop.Web.Areas.Admin.Models.Orders;
+using Nop.Web.Areas.Admin.Models.Passports;
 using Nop.Web.Areas.Admin.Models.Payments;
 using Nop.Web.Areas.Admin.Models.Plugins;
 using Nop.Web.Areas.Admin.Models.Polls;
@@ -112,6 +114,7 @@ public partial class AdminMapperConfiguration : Profile, IOrderedMapperProfile
         CreateVendorsMaps();
         CreateWarehouseMaps();
         CreateProfilesMaps();
+        CreatePassportsMaps();
 
         //add some generic mapping rules
         this.Internal().ForAllMaps((mapConfiguration, map) =>
@@ -1761,6 +1764,17 @@ public partial class AdminMapperConfiguration : Profile, IOrderedMapperProfile
             .ForMember(entity => entity.IsAdmin, options => options.Ignore())
             .ForMember(entity => entity.SearchApplicantId, options => options.Ignore());
         CreateMap<ProfileModel, Nop.Core.Domain.Profiles.Profile>();
+    }
+
+    /// <summary>
+    /// Create passports maps 
+    /// </summary>
+    protected virtual void CreatePassportsMaps()
+    {
+        CreateMap<Passport, PassportModel>()
+            .ForMember(entity => entity.ApplicantName, options => options.Ignore())
+            .ForMember(entity => entity.AvailableApplicants, options => options.Ignore());
+        CreateMap<PassportModel, Passport>();
     }
 
     #endregion

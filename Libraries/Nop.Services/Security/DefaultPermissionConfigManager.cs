@@ -170,5 +170,11 @@ public partial class DefaultPermissionConfigManager : IPermissionConfigManager
         new ("Admin area. Access Profile", StandardPermission.Profile.ACCESS_PROFILE, nameof(StandardPermission.Profile), NopCustomerDefaults.AdministratorsRoleName),
 
         #endregion
+
+        #region Passport
+
+        new ("Admin area. Access Passport", StandardPermission.Passport.ACCESS_PASSPORT, nameof(StandardPermission.Passport), NopCustomerDefaults.AdministratorsRoleName),
+
+        #endregion
     };
 }

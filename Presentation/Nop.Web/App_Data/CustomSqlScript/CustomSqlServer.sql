@@ -50,3 +50,28 @@ CREATE TABLE [dbo].[Profile](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+--- Permission Passport menu
+Insert Into [dbo].[PermissionRecord] values('Admin area. Access Passport','Passport.AccessPassport','Passport')
+
+-------- Passport
+CREATE TABLE [dbo].[Passport](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ApplicantId] int NOT NULL,
+	[PassportNumber] nvarchar(400) NOT NULL,
+	[IssuingCountry] nvarchar(400) NOT NULL,
+	[IssueDate] [datetime2](7) NOT NULL,
+    [ExpiryDate] [datetime2](7) NOT NULL,
+	[DateOfBirth] [datetime2](7) NULL,
+	[BirthPlace] nvarchar(400) NULL,
+	[PlaceOfIssue] nvarchar(400) NOT NULL,
+	[IsPrimary] [bit] NOT NULL,
+	[UploadedAt] [datetime2](7) NOT NULL,
+	[UploadedBy] nvarchar(400) NOT NULL,
+	[FileId] int NOT NULL default 0
+ CONSTRAINT [PK_Passport] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

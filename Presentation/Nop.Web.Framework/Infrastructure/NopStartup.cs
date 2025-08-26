@@ -36,6 +36,7 @@ using Nop.Services.Media.RoxyFileman;
 using Nop.Services.Messages;
 using Nop.Services.News;
 using Nop.Services.Orders;
+using Nop.Services.Passports;
 using Nop.Services.Payments;
 using Nop.Services.Plugins;
 using Nop.Services.Plugins.Marketplace;
@@ -236,6 +237,7 @@ public partial class NopStartup : INopStartup
         services.AddScoped<INopUrlHelper, NopUrlHelper>();
         services.AddScoped<IWidgetModelFactory, WidgetModelFactory>();
         services.AddTransient<IProfileService, ProfileService>();
+        services.AddTransient<IPassportService, PassportService>();
 
         //attribute services
         services.AddScoped(typeof(IAttributeService<,>), typeof(AttributeService<,>));

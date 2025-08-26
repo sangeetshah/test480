@@ -94,6 +94,15 @@ public partial class AdminMenu : IAdminMenu
                     Url = GetMenuItemUrl("Profile", "Create"),
                     IconClass = "fas fa-user"
                 },
+                //passport
+                new()
+                {
+                    SystemName = "Passport",
+                    Title = await _localizationService.GetResourceAsync("Admin.Passport"),
+                    PermissionNames = new List<string> { StandardPermission.Passport.ACCESS_PASSPORT },
+                    Url = GetMenuItemUrl("Passport", "List"),
+                    IconClass = "fas fa-passport"
+                },
                 //catalog
                 new()
                 {

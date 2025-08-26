@@ -154,4 +154,9 @@ public partial class StandardPermission
     {
         public const string ACCESS_PROFILE = $"{nameof(Profile)}.AccessProfile";
     }
+
+    public partial class Passport
+    {
+        public const string ACCESS_PASSPORT = $"{nameof(Passport)}.AccessPassport";
+    }
 }

@@ -38,7 +38,7 @@ public partial class ProfileService : IProfileService
         if (profileId == 0)
             return null;
 
-        return await _profileRepository.GetByIdAsync(profileId);
+        return await _profileRepository.GetByIdAsync(profileId, cache => default);
     }
 
     /// <summary>
@@ -75,6 +75,23 @@ public partial class ProfileService : IProfileService
     public virtual async Task UpdateProfileAsync(Profile profile)
     {
         await _profileRepository.UpdateAsync(profile);
+    }
+
+    /// <summary>
+    /// Gets all profiles
+    /// </summary>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the profiles
+    /// </returns>
+    public virtual async Task<IList<Profile>> GetAllProfilesAsync()
+    {
+        return await _profileRepository.GetAllAsync(query => 
+        {
+            query = query.OrderBy(p => p.Id);
+
+            return query;
+        }, cache => default);
     }
 
     #endregion

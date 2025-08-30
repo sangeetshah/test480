@@ -1,0 +1,149 @@
+@model EducationModel
+
+<div class="card-body">    
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="ApplicantId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="ApplicantId" asp-items="Model.AvailableApplicants" asp-required="true" />
+            <span asp-validation-for="ApplicantId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="StandardId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="StandardId" asp-items="Model.AvailableStandards" asp-required="true" />
+            <span asp-validation-for="StandardId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="CourseName" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="CourseName" asp-required="true" />
+            <span asp-validation-for="CourseName"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="FieldOfStudy" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="FieldOfStudy" asp-required="true" />
+            <span asp-validation-for="FieldOfStudy"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Institution" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Institution" asp-required="true" />
+            <span asp-validation-for="Institution"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="University" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="University" asp-required="true" />
+            <span asp-validation-for="University"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address" />
+            <span asp-validation-for="Address"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="City" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="City" />
+            <span asp-validation-for="City"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="CountryCode" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="CountryCode" />
+            <span asp-validation-for="CountryCode"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="GraduationYear" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="GraduationYear" asp-required="true" />
+            <span asp-validation-for="GraduationYear"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="GPA" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="GPA" />
+            <span asp-validation-for="GPA"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="IsHighest" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="IsHighest" />
+            <span asp-validation-for="IsHighest"></span>
+        </div>
+    </div>
+    @if (Model.Id > 0)
+    {
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="UploadedAt" />
+            </div>
+            <div class="col-md-9">
+                <div class="form-text-row">@Model.UploadedAt</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="UploadedBy" />
+            </div>
+            <div class="col-md-9">
+                <div class="form-text-row">@Model.UploadedBy</div>
+            </div>
+        </div>        
+    }   
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Certificate1Id" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Certificate1Id" />
+            <span asp-validation-for="Certificate1Id"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Certificate2Id" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Certificate2Id" />
+            <span asp-validation-for="Certificate2Id"></span>
+        </div>
+    </div>
+</div>

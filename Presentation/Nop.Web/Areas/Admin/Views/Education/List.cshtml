@@ -1,0 +1,204 @@
+﻿@model EducationSearchModel
+
+@{
+    //page title
+    ViewBag.PageTitle = T("Admin.Education").Text;
+    //active menu item (system name)
+    NopHtml.SetActiveMenuItemSystemName("Education");
+}
+
+@{
+    const string hideSearchBlockAttributeName = "EducationPage.HideSearchBlock";
+    var hideSearchBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideSearchBlockAttributeName);
+}
+
+<div class="content-header clearfix">
+    <h1 class="float-left">
+        @T("Admin.Education")
+    </h1>
+    <div class="float-right">
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-square-plus"></i>
+            @T("Admin.Common.AddNew")
+        </a>
+        <button type="button" id="delete-selected" class="btn btn-danger">
+            <i class="far fa-trash-can"></i>
+            @T("Admin.Common.Delete.Selected")
+        </button>
+        <nop-action-confirmation asp-button-id="delete-selected" />
+    </div>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+    <div class="form-horizontal">
+        <div class="cards-group">
+            <div class="card card-default card-search">
+                <div class="card-body">
+                    <div class="row search-row @(!hideSearchBlock ? "opened" : "")" data-hideAttribute="@hideSearchBlockAttributeName">
+                        <div class="search-text">@T("Admin.Common.Search")</div>
+                        <div class="icon-search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></div>
+                        <div class="icon-collapse"><i class="far fa-angle-@(!hideSearchBlock ? "up" : "down")" aria-hidden="true"></i></div>
+                    </div>
+
+                    <div class="search-body @(hideSearchBlock ? "closed" : "")">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <nop-label asp-for="SearchApplicantId" />
+                                    </div>
+                                    <div class="col-md-8">
+                                            <nop-select asp-for="SearchApplicantId" asp-items="Model.AvailableApplicants" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <nop-label asp-for="SearchStandardId" />
+                                    </div>
+                                    <div class="col-md-8">
+                                            <nop-select asp-for="SearchStandardId" asp-items="Model.AvailableStandards" />
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="text-center col-12">
+                                <button type="button" id="search-educations" class="btn btn-primary btn-search">
+                                    <i class="fas fa-magnifying-glass"></i>
+                                    @T("Admin.Common.Search")
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-default">
+                <div class="card-body">
+                    @await Html.PartialAsync("Table", new DataTablesModel
+                    {
+                        Name = "educations-grid",
+                        UrlRead = new DataUrl("List", "Education", null),
+                        SearchButtonId = "search-educations",
+                        Length = Model.PageSize,
+                        LengthMenu = Model.AvailablePageSizes,
+                        Filters = new List<FilterParameter>
+                        {
+                            new FilterParameter(nameof(Model.SearchApplicantId)),
+                            new FilterParameter(nameof(Model.SearchStandardId))
+                        },
+                        ColumnCollection = new List<ColumnProperty>
+                        {
+                            new ColumnProperty(nameof(EducationModel.Id))
+                            {
+                                IsMasterCheckBox = true,
+                                Render = new RenderCheckBox("checkbox_educations"),
+                                ClassName =  NopColumnClassDefaults.CenterAll,
+                                Width = "50"
+                            },
+                            new ColumnProperty(nameof(EducationModel.ApplicantName))
+                            {
+                                Title = T("Admin.Education.Fields.ApplicantId").Text,
+                                Width = "150"
+                            },
+                            new ColumnProperty(nameof(EducationModel.Standard))
+                            {
+                                Title = T("Admin.Education.Fields.StandardId").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(EducationModel.CourseName))
+                            {
+                                Title = T("Admin.Education.Fields.CourseName").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(EducationModel.FieldOfStudy))
+                            {
+                                Title = T("Admin.Education.Fields.FieldOfStudy").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(EducationModel.Institution))
+                            {
+                                Title = T("Admin.Education.Fields.Institution").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(EducationModel.University))
+                            {
+                                Title = T("Admin.Education.Fields.University").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(EducationModel.GraduationYear))
+                            {
+                                Title = T("Admin.Education.Fields.GraduationYear").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(EducationModel.GPA))
+                            {
+                                Title = T("Admin.Education.Fields.GPA").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(EducationModel.IsHighest))
+                            {
+                                Title = T("Admin.Education.Fields.IsHighest").Text,
+                                Width = "100",
+                                ClassName = NopColumnClassDefaults.CenterAll,
+                                Render = new RenderBoolean()
+                            },
+                            new ColumnProperty(nameof(EducationModel.UploadedAt))
+                            {
+                                Title = T("Admin.Education.Fields.UploadedAt").Text,
+                                Width = "100",
+                                Render = new RenderDate()
+                            },
+                            new ColumnProperty(nameof(EducationModel.UploadedBy))
+                            {
+                                Title = T("Admin.Education.Fields.UploadedBy").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(EducationModel.Id))
+                            {
+                                Title = T("Admin.Common.Edit").Text,
+                                Width = "100",
+                                ClassName = NopColumnClassDefaults.Button,
+                                Render = new RenderButtonEdit(new DataUrl("~/Admin/Education/Edit"))
+                            }
+                        }
+                    })
+
+                        <script>
+                            $(function() {
+                                $('#delete-selected-action-confirmation-submit-button').bind('click', function () {
+                                    var postData = {
+                                        selectedIds: selectedIds
+                                    };
+                                    addAntiForgeryToken(postData);
+                                    $.ajax({
+                                        cache: false,
+                                        type: "POST",
+                                        url: "@(Url.Action("DeleteSelected", "Education"))",
+                                        data: postData,
+                                        error: function (jqXHR, textStatus, errorThrown) {
+                                            showAlert('deleteSelectedFailed', errorThrown);
+                                        },
+                                        complete: function (jqXHR, textStatus) {
+                                            if (jqXHR.status === 204)
+                                            {
+                                                showAlert('nothingSelectedAlert', '@T("Admin.Common.Alert.NothingSelected")');
+                                                return;
+                                            }
+                                            updateTable('#educations-grid');
+                                        }
+                                    });
+                                    $('#delete-selected-action-confirmation').modal('toggle');
+                                    return false;
+                                });
+                            });
+                        </script>
+                        <nop-alert asp-alert-id="deleteSelectedFailed" />
+                        <nop-alert asp-alert-id="nothingSelectedAlert" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

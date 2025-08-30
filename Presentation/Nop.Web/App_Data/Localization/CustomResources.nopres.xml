@@ -389,4 +389,178 @@
     <Value>Passport deleted successfully.</Value>
   </LocaleResource>
   <!--Passport-->
+
+  <!--Education-->
+  <LocaleResource Name="Admin.Education">
+    <Value>Education</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Created">
+    <Value>Education created successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.AddNew">
+    <Value>Add a new education</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.BackToList">
+    <Value>back to education list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.EditEducationDetails">
+    <Value>Edit education details</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Info">
+    <Value>Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Educations.StandardEnum.Tenth">
+    <Value>10th</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Educations.StandardEnum.Twelfth">
+    <Value>12th</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Educations.StandardEnum.Graduate">
+    <Value>Graduate</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Educations.StandardEnum.PostGraduate">
+    <Value>Post Graduate</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Educations.StandardEnum.Doctor">
+    <Value>Doctor</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.List.SearchApplicantId">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.List.SearchApplicantId.Hint">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.List.SearchStandardId">
+    <Value>Standard</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.List.SearchStandardId.Hint">
+    <Value>Standard</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.ApplicantId">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.ApplicantId.Hint">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.ApplicantId.Required">
+    <Value>The applicant id is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.StandardId">
+    <Value>Standard</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.StandardId.Hint">
+    <Value>Standard</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.StandardId.Required">
+    <Value>Standard is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.CourseName">
+    <Value>Course name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.CourseName.Hint">
+    <Value>Course name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.CourseName.Required">
+    <Value>Course name is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.FieldOfStudy">
+    <Value>Field of study</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.FieldOfStudy.Hint">
+    <Value>Field of study</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.FieldOfStudy.Required">
+    <Value>Field of study is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.Institution">
+    <Value>Institution</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.Institution.Hint">
+    <Value>Institution</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.Institution.Required">
+    <Value>Institution is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.University">
+    <Value>University</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.University.Hint">
+    <Value>University</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.University.Required">
+    <Value>University is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.Address">
+    <Value>Address</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.Address.Hint">
+    <Value>Address</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.City">
+    <Value>City</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.City.Hint">
+    <Value>City</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.CountryCode">
+    <Value>Country code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.CountryCode.Hint">
+    <Value>Country code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.GraduationYear">
+    <Value>Graduation year</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.GraduationYear.Hint">
+    <Value>Graduation year</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.GraduationYear.Required">
+    <Value>Graduation year is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.GPA">
+    <Value>GPA</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.GPA.Hint">
+    <Value>GPA</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.IsHighest">
+    <Value>Is highest</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.IsHighest.Hint">
+    <Value>Is highest</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.UploadedAt">
+    <Value>Uploaded at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.UploadedAt.Hint">
+    <Value>Uploaded at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.UploadedBy">
+    <Value>Uploaded by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.UploadedBy.Hint">
+    <Value>Uploaded by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.Certificate1Id">
+    <Value>Certificate 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.Certificate1Id.Hint">
+    <Value>Certificate 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.Certificate2Id">
+    <Value>Certificate 2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Fields.Certificate2Id.Hint">
+    <Value>Certificate 2</Value>
+  </LocaleResource>  
+  <LocaleResource Name="Admin.Education.Created">
+    <Value>Education created successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Updated">
+    <Value>Education updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Education.Deleted">
+    <Value>Education deleted successfully.</Value>
+  </LocaleResource>
+  <!--Education-->
 </Language>

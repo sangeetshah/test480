@@ -176,5 +176,11 @@ public partial class DefaultPermissionConfigManager : IPermissionConfigManager
         new ("Admin area. Access Passport", StandardPermission.Passport.ACCESS_PASSPORT, nameof(StandardPermission.Passport), NopCustomerDefaults.AdministratorsRoleName),
 
         #endregion
+
+        #region Education
+
+        new ("Admin area. Access Education", StandardPermission.Education.ACCESS_EDUCATION, nameof(StandardPermission.Education), NopCustomerDefaults.AdministratorsRoleName),
+
+        #endregion
     };
 }

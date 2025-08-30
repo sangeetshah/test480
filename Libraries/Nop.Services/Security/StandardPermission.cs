@@ -159,4 +159,9 @@ public partial class StandardPermission
     {
         public const string ACCESS_PASSPORT = $"{nameof(Passport)}.AccessPassport";
     }
+
+    public partial class Education
+    {
+        public const string ACCESS_EDUCATION = $"{nameof(Education)}.AccessEducation";
+    }
 }

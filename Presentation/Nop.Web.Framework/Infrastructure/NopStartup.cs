@@ -22,6 +22,7 @@ using Nop.Services.Configuration;
 using Nop.Services.Customers;
 using Nop.Services.Directory;
 using Nop.Services.Discounts;
+using Nop.Services.Educations;
 using Nop.Services.Events;
 using Nop.Services.ExportImport;
 using Nop.Services.Forums;
@@ -238,6 +239,7 @@ public partial class NopStartup : INopStartup
         services.AddScoped<IWidgetModelFactory, WidgetModelFactory>();
         services.AddTransient<IProfileService, ProfileService>();
         services.AddTransient<IPassportService, PassportService>();
+        services.AddTransient<IEducationService, EducationService>();
 
         //attribute services
         services.AddScoped(typeof(IAttributeService<,>), typeof(AttributeService<,>));

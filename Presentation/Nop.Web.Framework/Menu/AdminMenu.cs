@@ -103,6 +103,15 @@ public partial class AdminMenu : IAdminMenu
                     Url = GetMenuItemUrl("Passport", "List"),
                     IconClass = "fas fa-passport"
                 },
+                //education
+                new()
+                {
+                    SystemName = "Education",
+                    Title = await _localizationService.GetResourceAsync("Admin.Education"),
+                    PermissionNames = new List<string> { StandardPermission.Education.ACCESS_EDUCATION },
+                    Url = GetMenuItemUrl("Education", "List"),
+                    IconClass = "fas fa-school"
+                },
                 //catalog
                 new()
                 {

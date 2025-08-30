@@ -4,7 +4,7 @@ using Nop.Core.Domain.Passports;
 namespace Nop.Services.Passports
 {
     /// <summary>
-    /// Passport service interface
+    /// Education service interface
     /// </summary>
     public partial interface IPassportService
     {

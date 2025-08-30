@@ -92,7 +92,7 @@ namespace Nop.Web.Areas.Admin.Controllers
 
                 await _passportService.InsertPassportAsync(passport);
 
-                _notificationService.SuccessNotification(await _localizationService.GetResourceAsync("Admin.Passport.Added"));
+                _notificationService.SuccessNotification(await _localizationService.GetResourceAsync("Admin.Passport.Created"));
 
                 return continueEditing ? RedirectToAction("Edit", new { id = passport.Id }) : RedirectToAction("List");
             }

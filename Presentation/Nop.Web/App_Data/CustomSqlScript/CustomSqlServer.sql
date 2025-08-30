@@ -75,3 +75,33 @@ CREATE TABLE [dbo].[Passport](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
+--- Permission Education menu
+Insert Into [dbo].[PermissionRecord] values('Admin area. Access Education','Education.AccessEducation','Education')
+
+-------- Education
+CREATE TABLE [dbo].[Education](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ApplicantId] int NOT NULL,
+	[StandardId] int NOT NULL,
+	[CourseName] nvarchar(400) NOT NULL,
+	[FieldOfStudy] nvarchar(400) NOT NULL,
+	[Institution] nvarchar(400) NOT NULL,
+	[University] nvarchar(400) NOT NULL,
+	[Address] nvarchar(400) null,
+	[City] nvarchar(400) null,
+	[CountryCode] nvarchar(400) null,
+	[GraduationYear] int NOT NULL,
+	[GPA] decimal(18,4) NOT NULL,
+	[IsHighest] [bit] NOT NULL,	
+	[UploadedAt] [datetime2](7) NOT NULL,
+	[UploadedBy] nvarchar(400) NOT NULL,
+	[Certificate1Id] int NOT NULL default 0,
+	[Certificate2Id] int NOT NULL default 0
+ CONSTRAINT [PK_Education] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

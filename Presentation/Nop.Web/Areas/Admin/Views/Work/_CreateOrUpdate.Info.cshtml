@@ -1,0 +1,172 @@
+@model WorkModel
+
+<div class="card-body">    
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="ApplicantId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="ApplicantId" asp-items="Model.AvailableApplicants" asp-required="true" />
+            <span asp-validation-for="ApplicantId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="EmploymentStatusId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="EmploymentStatusId" asp-items="Model.AvailableEmploymentStatuses" asp-required="true" />
+            <span asp-validation-for="EmploymentStatusId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="JobTitle" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="JobTitle" asp-required="true" />
+            <span asp-validation-for="JobTitle"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="EmployerOrBusiness" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="EmployerOrBusiness" asp-required="true" />
+            <span asp-validation-for="EmployerOrBusiness"></span>
+        </div>
+    </div>    
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address" />
+            <span asp-validation-for="Address"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="City" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="City" />
+            <span asp-validation-for="City"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="CountryCode" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="CountryCode" />
+            <span asp-validation-for="CountryCode"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="StartDate" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="StartDate" />
+            <span asp-validation-for="StartDate"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="EndDate" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="EndDate" />
+            <span asp-validation-for="EndDate"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="AnnunalIncomeAmount" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="AnnunalIncomeAmount" />
+            <span asp-validation-for="AnnunalIncomeAmount"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="TaxFiled" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="TaxFiled" />
+            <span asp-validation-for="TaxFiled"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="TaxDeclaredIncome" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="TaxDeclaredIncome" />
+            <span asp-validation-for="TaxDeclaredIncome"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="TaxCurrency" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="TaxCurrency" />
+            <span asp-validation-for="TaxCurrency"></span>
+        </div>
+    </div>
+    @if (Model.Id > 0)
+    {
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="CreatedAt" />
+            </div>
+            <div class="col-md-9">
+                <div class="form-text-row">@Model.CreatedAt</div>
+            </div>
+        </div>
+        if (Model.UpdatedAt.HasValue)
+        {
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="UpdatedAt" />
+                </div>
+                <div class="col-md-9">
+                    <div class="form-text-row">@Model.UpdatedAt</div>
+                </div>
+            </div>
+        }
+        if (!string.IsNullOrEmpty(Model.UpdatedBy))
+        {
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="UpdatedBy" />
+                </div>
+                <div class="col-md-9">
+                    <div class="form-text-row">@Model.UpdatedBy</div>
+                </div>
+            </div>
+        }
+    }   
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="OfferLetterId" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="OfferLetterId" />
+            <span asp-validation-for="OfferLetterId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="RelievingLetterId" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="RelievingLetterId" />
+            <span asp-validation-for="RelievingLetterId"></span>
+        </div>
+    </div>
+</div>

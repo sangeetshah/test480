@@ -28,6 +28,7 @@ using Nop.Core.Domain.Stores;
 using Nop.Core.Domain.Tax;
 using Nop.Core.Domain.Topics;
 using Nop.Core.Domain.Vendors;
+using Nop.Core.Domain.Works;
 using Nop.Core.Infrastructure.Mapper;
 using Nop.Data.Configuration;
 using Nop.Services.Authentication.External;
@@ -69,6 +70,7 @@ using Nop.Web.Areas.Admin.Models.Tax;
 using Nop.Web.Areas.Admin.Models.Templates;
 using Nop.Web.Areas.Admin.Models.Topics;
 using Nop.Web.Areas.Admin.Models.Vendors;
+using Nop.Web.Areas.Admin.Models.Works;
 using Nop.Web.Framework.Models;
 using Nop.Web.Framework.WebOptimizer;
 
@@ -118,6 +120,7 @@ public partial class AdminMapperConfiguration : Profile, IOrderedMapperProfile
         CreateProfilesMaps();
         CreatePassportsMaps();
         CreateEducationsMaps();
+        CreateWorksMaps();
 
         //add some generic mapping rules
         this.Internal().ForAllMaps((mapConfiguration, map) =>
@@ -1792,6 +1795,20 @@ public partial class AdminMapperConfiguration : Profile, IOrderedMapperProfile
             .ForMember(entity => entity.AvailableStandards, options => options.Ignore());
         CreateMap<EducationModel, Education>()
             .ForMember(entity => entity.StandardEnum, options => options.Ignore());
+    }
+
+    /// <summary>
+    /// Create works maps 
+    /// </summary>
+    protected virtual void CreateWorksMaps()
+    {
+        CreateMap<Work, WorkModel>()
+            .ForMember(entity => entity.ApplicantName, options => options.Ignore())
+            .ForMember(entity => entity.AvailableApplicants, options => options.Ignore())
+            .ForMember(entity => entity.EmploymentStatus, options => options.Ignore())
+            .ForMember(entity => entity.AvailableEmploymentStatuses, options => options.Ignore());
+        CreateMap<WorkModel, Work>()
+            .ForMember(entity => entity.EmploymentStatusEnum, options => options.Ignore());
     }
 
     #endregion

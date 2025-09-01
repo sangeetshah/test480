@@ -164,4 +164,9 @@ public partial class StandardPermission
     {
         public const string ACCESS_EDUCATION = $"{nameof(Education)}.AccessEducation";
     }
+
+    public partial class Work
+    {
+        public const string ACCESS_WORK = $"{nameof(Work)}.AccessWork";
+    }
 }

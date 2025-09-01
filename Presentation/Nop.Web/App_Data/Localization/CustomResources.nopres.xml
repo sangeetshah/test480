@@ -394,9 +394,6 @@
   <LocaleResource Name="Admin.Education">
     <Value>Education</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Education.Created">
-    <Value>Education created successfully.</Value>
-  </LocaleResource>
   <LocaleResource Name="Admin.Education.AddNew">
     <Value>Add a new education</Value>
   </LocaleResource>
@@ -563,4 +560,175 @@
     <Value>Education deleted successfully.</Value>
   </LocaleResource>
   <!--Education-->
+
+  <!--Work-->
+  <LocaleResource Name="Admin.Work">
+    <Value>Work</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.AddNew">
+    <Value>Add a new work</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.BackToList">
+    <Value>back to work list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.EditWorkDetails">
+    <Value>Edit work details</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Info">
+    <Value>Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Works.EmploymentStatusEnum.Employed">
+    <Value>Employed</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Works.EmploymentStatusEnum.SelfEmployed">
+    <Value>Self employed</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Works.EmploymentStatusEnum.Student">
+    <Value>Student</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Works.EmploymentStatusEnum.Unemployed">
+    <Value>Unemployed</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.List.SearchApplicantId">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.List.SearchApplicantId.Hint">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.List.SearchEmploymentStatusId">
+    <Value>Employment status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.List.SearchEmploymentStatusId.Hint">
+    <Value>Employment status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.ApplicantId">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.ApplicantId.Hint">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.ApplicantId.Required">
+    <Value>The applicant id is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.EmploymentStatusId">
+    <Value>Employment status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.EmploymentStatusId.Hint">
+    <Value>Employment status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.EmploymentStatusId.Required">
+    <Value>The employment status is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.JobTitle">
+    <Value>Job title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.JobTitle.Hint">
+    <Value>Job title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.JobTitle.Required">
+    <Value>The job title is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.EmployerOrBusiness">
+    <Value>Employer or Business</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.EmployerOrBusiness.Hint">
+    <Value>Employer or Business</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.EmployerOrBusiness.Required">
+    <Value>The employer or business is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.Address">
+    <Value>Address</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.Address.Hint">
+    <Value>Address</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.City">
+    <Value>City</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.City.Hint">
+    <Value>City</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.CountryCode">
+    <Value>Country code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.CountryCode.Hint">
+    <Value>Country code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.StartDate">
+    <Value>Start date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.StartDate.Hint">
+    <Value>Start date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.EndDate">
+    <Value>End date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.EndDate.Hint">
+    <Value>End date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.AnnunalIncomeAmount">
+    <Value>Annunal income amount</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.AnnunalIncomeAmount.Hint">
+    <Value>Annunal income amount</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.TaxFiled">
+    <Value>Tax filed</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.TaxFiled.Hint">
+    <Value>Tax filed</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.TaxDeclaredIncome">
+    <Value>Tax declared income</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.TaxDeclaredIncome.Hint">
+    <Value>Tax declared income</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.TaxCurrency">
+    <Value>Tax currency</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.TaxCurrency.Hint">
+    <Value>Tax currency</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.CreatedAt">
+    <Value>Created at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.CreatedAt.Hint">
+    <Value>Created at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.UpdatedAt">
+    <Value>Updated at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.UpdatedAt.Hint">
+    <Value>Updated at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.UpdatedBy">
+    <Value>Updated by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.UpdatedBy.Hint">
+    <Value>Updated by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.OfferLetterId">
+    <Value>Offer letter</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.OfferLetterId.Hint">
+    <Value>Offer letter</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.RelievingLetterId">
+    <Value>Relieving letter</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Fields.RelievingLetterId.Hint">
+    <Value>Relieving letter</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Created">
+    <Value>Work created successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Updated">
+    <Value>Work updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Work.Deleted">
+    <Value>Work deleted successfully.</Value>
+  </LocaleResource>
+  <!--Work-->
 </Language>

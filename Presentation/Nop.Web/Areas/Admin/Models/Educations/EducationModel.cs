@@ -13,6 +13,7 @@ namespace Nop.Web.Areas.Admin.Models.Educations
         public EducationModel()
         {
             AvailableApplicants = new List<SelectListItem>();
+            AvailableStandards = new List<SelectListItem>();
         }
 
         [NopResourceDisplayName("Admin.Education.Fields.ApplicantId")]

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -54,6 +55,7 @@ using Nop.Services.Tax;
 using Nop.Services.Themes;
 using Nop.Services.Topics;
 using Nop.Services.Vendors;
+using Nop.Services.Works;
 using Nop.Web.Framework.Factories;
 using Nop.Web.Framework.Menu;
 using Nop.Web.Framework.Mvc.Routing;
@@ -240,6 +242,7 @@ public partial class NopStartup : INopStartup
         services.AddTransient<IProfileService, ProfileService>();
         services.AddTransient<IPassportService, PassportService>();
         services.AddTransient<IEducationService, EducationService>();
+        services.AddTransient<IWorkService, WorkService>();
 
         //attribute services
         services.AddScoped(typeof(IAttributeService<,>), typeof(AttributeService<,>));

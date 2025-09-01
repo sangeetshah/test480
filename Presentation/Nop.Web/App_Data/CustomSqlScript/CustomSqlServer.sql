@@ -105,3 +105,34 @@ CREATE TABLE [dbo].[Education](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+--- Permission Work menu
+Insert Into [dbo].[PermissionRecord] values('Admin area. Access Work','Work.AccessWork','Work')
+
+-------- Work
+CREATE TABLE [dbo].[Work](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ApplicantId] int NOT NULL,
+	[EmploymentStatusId] int NOT NULL,
+	[JobTitle] nvarchar(400) NOT NULL,
+	[EmployerOrBusiness] nvarchar(400) NOT NULL,	
+	[Address] nvarchar(400) null,
+	[City] nvarchar(400) null,
+	[CountryCode] nvarchar(400) null,
+	[StartDate] [datetime2](7) NULL,
+	[EndDate] [datetime2](7) NULL,
+	[AnnunalIncomeAmount] decimal(18,4) NOT NULL,
+	[TaxFiled] [bit] NOT NULL,
+	[TaxDeclaredIncome] decimal(18,4) NOT NULL,
+	[TaxCurrency] nvarchar(400) null,
+	[CreatedAt] [datetime2](7) NOT NULL,
+	[UpdatedAt] [datetime2](7) NULL,
+	[UpdatedBy] nvarchar(400) NULL,
+	[OfferLetterId] int NOT NULL default 0,
+	[RelievingLetterId] int NOT NULL default 0
+ CONSTRAINT [PK_Work] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

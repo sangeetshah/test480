@@ -150,7 +150,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [CheckPermission(StandardPermission.Passport.ACCESS_PASSPORT)]
+        [CheckPermission(StandardPermission.Education.ACCESS_EDUCATION)]
         public virtual async Task<IActionResult> Delete(int id)
         {
             //try to get an education with the specified id
@@ -166,7 +166,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [CheckPermission(StandardPermission.Passport.ACCESS_PASSPORT)]
+        [CheckPermission(StandardPermission.Education.ACCESS_EDUCATION)]
         public virtual async Task<IActionResult> DeleteSelected(ICollection<int> selectedIds)
         {
             if (selectedIds == null || !selectedIds.Any())

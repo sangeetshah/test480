@@ -1,0 +1,20 @@
+﻿@model WorkModel
+
+@{
+    const string hideInfoBlockAttributeName = "WorkPage.HideInfoBlock";
+    var customer = await workContext.GetCurrentCustomerAsync();
+    var hideInfoBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideInfoBlockAttributeName);
+}
+
+<input asp-for="Id" type="hidden" />
+<input asp-for="CreatedAt" type="hidden" />
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="form-horizontal">
+            <nop-cards id="work-cards">
+                <nop-card asp-name="work-info" asp-icon="fas fa-info" asp-title="@T("Admin.Work.Info")" asp-hide-block-attribute-name="@hideInfoBlockAttributeName" asp-hide="@hideInfoBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.Info", Model)</nop-card>
+            </nop-cards>
+        </div>
+    </div>
+</section>

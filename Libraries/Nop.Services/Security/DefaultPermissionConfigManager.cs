@@ -182,5 +182,11 @@ public partial class DefaultPermissionConfigManager : IPermissionConfigManager
         new ("Admin area. Access Education", StandardPermission.Education.ACCESS_EDUCATION, nameof(StandardPermission.Education), NopCustomerDefaults.AdministratorsRoleName),
 
         #endregion
+
+        #region Work
+
+        new ("Admin area. Access Work", StandardPermission.Work.ACCESS_WORK, nameof(StandardPermission.Work), NopCustomerDefaults.AdministratorsRoleName),
+
+        #endregion
     };
 }

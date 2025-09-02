@@ -136,3 +136,32 @@ CREATE TABLE [dbo].[Work](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+--- Permission Finance menu
+Insert Into [dbo].[PermissionRecord] values('Admin area. Access Finance','Finance.AccessFinance','Finance')
+
+-------- Finance
+CREATE TABLE [dbo].[Finance](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ApplicantId] int NOT NULL,
+	[RecordTypeId] int NOT NULL,
+	[BankName] nvarchar(400) NOT NULL,
+	[AccountMask] nvarchar(400) NOT NULL,	
+	[Currency] decimal(18,4) NOT NULL,
+	[PeriodStart] [datetime2](7) NULL,
+	[PeriodEnd] [datetime2](7) NULL,
+	[AvgBalance] decimal(18,4) NOT NULL,
+	[AssetTypeId] int NOT NULL,
+	[Amount] decimal(18,4) NOT NULL,
+	[Notes] nvarchar(400) NULL,
+	[CreatedAt] [datetime2](7) NOT NULL,
+	[CreatedBy] nvarchar(400) NULL,
+	[UpdatedAt] [datetime2](7) NULL,
+	[UpdatedBy] nvarchar(400) NULL,
+	[DocumentId] int NOT NULL default 0	
+ CONSTRAINT [PK_Finance] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

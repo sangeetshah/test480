@@ -188,5 +188,11 @@ public partial class DefaultPermissionConfigManager : IPermissionConfigManager
         new ("Admin area. Access Work", StandardPermission.Work.ACCESS_WORK, nameof(StandardPermission.Work), NopCustomerDefaults.AdministratorsRoleName),
 
         #endregion
+
+        #region Finance
+
+        new ("Admin area. Access Finance", StandardPermission.Finance.ACCESS_FINANCE, nameof(StandardPermission.Finance), NopCustomerDefaults.AdministratorsRoleName),
+
+        #endregion
     };
 }

@@ -169,4 +169,9 @@ public partial class StandardPermission
     {
         public const string ACCESS_WORK = $"{nameof(Work)}.AccessWork";
     }
+
+    public partial class Finance
+    {
+        public const string ACCESS_FINANCE = $"{nameof(Finance)}.AccessFinance";
+    }
 }

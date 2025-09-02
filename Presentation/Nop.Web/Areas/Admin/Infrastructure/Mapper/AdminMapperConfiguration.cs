@@ -10,6 +10,7 @@ using Nop.Core.Domain.Customers;
 using Nop.Core.Domain.Directory;
 using Nop.Core.Domain.Discounts;
 using Nop.Core.Domain.Educations;
+using Nop.Core.Domain.Finances;
 using Nop.Core.Domain.Forums;
 using Nop.Core.Domain.Gdpr;
 using Nop.Core.Domain.Localization;
@@ -49,6 +50,7 @@ using Nop.Web.Areas.Admin.Models.Directory;
 using Nop.Web.Areas.Admin.Models.Discounts;
 using Nop.Web.Areas.Admin.Models.Educations;
 using Nop.Web.Areas.Admin.Models.ExternalAuthentication;
+using Nop.Web.Areas.Admin.Models.Finances;
 using Nop.Web.Areas.Admin.Models.Forums;
 using Nop.Web.Areas.Admin.Models.Localization;
 using Nop.Web.Areas.Admin.Models.Logging;
@@ -121,6 +123,7 @@ public partial class AdminMapperConfiguration : Profile, IOrderedMapperProfile
         CreatePassportsMaps();
         CreateEducationsMaps();
         CreateWorksMaps();
+        CreateFinancesMaps();
 
         //add some generic mapping rules
         this.Internal().ForAllMaps((mapConfiguration, map) =>
@@ -1809,6 +1812,23 @@ public partial class AdminMapperConfiguration : Profile, IOrderedMapperProfile
             .ForMember(entity => entity.AvailableEmploymentStatuses, options => options.Ignore());
         CreateMap<WorkModel, Work>()
             .ForMember(entity => entity.EmploymentStatusEnum, options => options.Ignore());
+    }
+
+    /// <summary>
+    /// Create finances maps 
+    /// </summary>
+    protected virtual void CreateFinancesMaps()
+    {
+        CreateMap<Finance, FinanceModel>()
+           .ForMember(entity => entity.ApplicantName, options => options.Ignore())
+           .ForMember(entity => entity.AvailableApplicants, options => options.Ignore())
+           .ForMember(entity => entity.RecordType, options => options.Ignore())
+           .ForMember(entity => entity.AvailableRecordTypes, options => options.Ignore())
+           .ForMember(entity => entity.AssetType, options => options.Ignore())
+           .ForMember(entity => entity.AvailableAssetTypes, options => options.Ignore());
+        CreateMap<FinanceModel, Finance>()
+            .ForMember(entity => entity.RecordTypeEnum, options => options.Ignore())
+            .ForMember(entity => entity.AssetTypeEnum, options => options.Ignore());
     }
 
     #endregion

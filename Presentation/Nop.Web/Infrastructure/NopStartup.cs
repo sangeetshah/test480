@@ -87,6 +87,7 @@ public partial class NopStartup : INopStartup
         services.AddScoped<IPassportModelFactory, PassportModelFactory>();
         services.AddScoped<IEducationModelFactory, EducationModelFactory>();
         services.AddScoped<IWorkModelFactory, WorkModelFactory>();
+        services.AddScoped<IFinanceModelFactory, FinanceModelFactory>();
 
         //factories
         services.AddScoped<Factories.IAddressModelFactory, Factories.AddressModelFactory>();

@@ -1,0 +1,187 @@
+﻿@model FinanceSearchModel
+
+@{
+    //page title
+    ViewBag.PageTitle = T("Admin.Finance").Text;
+    //active menu item (system name)
+    NopHtml.SetActiveMenuItemSystemName("Finance");
+}
+
+@{
+    const string hideSearchBlockAttributeName = "FinancePage.HideSearchBlock";
+    var hideSearchBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideSearchBlockAttributeName);
+}
+
+<div class="content-header clearfix">
+    <h1 class="float-left">
+        @T("Admin.Finance")
+    </h1>
+    <div class="float-right">
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-square-plus"></i>
+            @T("Admin.Common.AddNew")
+        </a>
+        <button type="button" id="delete-selected" class="btn btn-danger">
+            <i class="far fa-trash-can"></i>
+            @T("Admin.Common.Delete.Selected")
+        </button>
+        <nop-action-confirmation asp-button-id="delete-selected" />
+    </div>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+    <div class="form-horizontal">
+        <div class="cards-group">
+            <div class="card card-default card-search">
+                <div class="card-body">
+                    <div class="row search-row @(!hideSearchBlock ? "opened" : "")" data-hideAttribute="@hideSearchBlockAttributeName">
+                        <div class="search-text">@T("Admin.Common.Search")</div>
+                        <div class="icon-search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></div>
+                        <div class="icon-collapse"><i class="far fa-angle-@(!hideSearchBlock ? "up" : "down")" aria-hidden="true"></i></div>
+                    </div>
+
+                    <div class="search-body @(hideSearchBlock ? "closed" : "")">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <nop-label asp-for="SearchApplicantId" />
+                                    </div>
+                                    <div class="col-md-8">
+                                            <nop-select asp-for="SearchApplicantId" asp-items="Model.AvailableApplicants" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <nop-label asp-for="SearchRecordTypeId" />
+                                    </div>
+                                    <div class="col-md-8">
+                                            <nop-select asp-for="SearchRecordTypeId" asp-items="Model.AvailableRecordTypes" />
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="text-center col-12">
+                                <button type="button" id="search-finances" class="btn btn-primary btn-search">
+                                    <i class="fas fa-magnifying-glass"></i>
+                                    @T("Admin.Common.Search")
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-default">
+                <div class="card-body">
+                    @await Html.PartialAsync("Table", new DataTablesModel
+                    {
+                        Name = "finances-grid",
+                        UrlRead = new DataUrl("List", "Finance", null),
+                        SearchButtonId = "search-finances",
+                        Length = Model.PageSize,
+                        LengthMenu = Model.AvailablePageSizes,
+                        Filters = new List<FilterParameter>
+                        {
+                            new FilterParameter(nameof(Model.SearchApplicantId)),
+                            new FilterParameter(nameof(Model.SearchRecordTypeId))
+                        },
+                        ColumnCollection = new List<ColumnProperty>
+                        {
+                            new ColumnProperty(nameof(FinanceModel.Id))
+                            {
+                                IsMasterCheckBox = true,
+                                Render = new RenderCheckBox("checkbox_finances"),
+                                ClassName =  NopColumnClassDefaults.CenterAll,
+                                Width = "50"
+                            },
+                            new ColumnProperty(nameof(FinanceModel.ApplicantName))
+                            {
+                                Title = T("Admin.Finance.Fields.ApplicantId").Text,
+                                Width = "150"
+                            },
+                            new ColumnProperty(nameof(FinanceModel.RecordType))
+                            {
+                                Title = T("Admin.Finance.Fields.RecordTypeId").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(FinanceModel.BankName))
+                            {
+                                Title = T("Admin.Finance.Fields.BankName").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(FinanceModel.AccountMask))
+                            {
+                                Title = T("Admin.Finance.Fields.AccountMask").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(FinanceModel.Currency))
+                            {
+                                Title = T("Admin.Finance.Fields.Currency").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(FinanceModel.AssetType))
+                            {
+                                Title = T("Admin.Finance.Fields.AssetTypeId").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(FinanceModel.CreatedAt))
+                            {
+                                Title = T("Admin.Finance.Fields.CreatedAt").Text,
+                                Width = "100",
+                                Render = new RenderDate()
+                            },
+                            new ColumnProperty(nameof(FinanceModel.CreatedBy))
+                            {
+                                Title = T("Admin.Finance.Fields.CreatedBy").Text,
+                                Width = "100"
+                            },
+                            new ColumnProperty(nameof(FinanceModel.Id))
+                            {
+                                Title = T("Admin.Common.Edit").Text,
+                                Width = "100",
+                                ClassName = NopColumnClassDefaults.Button,
+                                Render = new RenderButtonEdit(new DataUrl("~/Admin/Finance/Edit"))
+                            }
+                        }
+                    })
+
+                        <script>
+                            $(function() {
+                                $('#delete-selected-action-confirmation-submit-button').bind('click', function () {
+                                    var postData = {
+                                        selectedIds: selectedIds
+                                    };
+                                    addAntiForgeryToken(postData);
+                                    $.ajax({
+                                        cache: false,
+                                        type: "POST",
+                                        url: "@(Url.Action("DeleteSelected", "Finance"))",
+                                        data: postData,
+                                        error: function (jqXHR, textStatus, errorThrown) {
+                                            showAlert('deleteSelectedFailed', errorThrown);
+                                        },
+                                        complete: function (jqXHR, textStatus) {
+                                            if (jqXHR.status === 204)
+                                            {
+                                                showAlert('nothingSelectedAlert', '@T("Admin.Common.Alert.NothingSelected")');
+                                                return;
+                                            }
+                                            updateTable('#finances-grid');
+                                        }
+                                    });
+                                    $('#delete-selected-action-confirmation').modal('toggle');
+                                    return false;
+                                });
+                            });
+                        </script>
+                        <nop-alert asp-alert-id="deleteSelectedFailed" />
+                        <nop-alert asp-alert-id="nothingSelectedAlert" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

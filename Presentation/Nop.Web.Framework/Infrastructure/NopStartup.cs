@@ -26,6 +26,7 @@ using Nop.Services.Discounts;
 using Nop.Services.Educations;
 using Nop.Services.Events;
 using Nop.Services.ExportImport;
+using Nop.Services.Finances;
 using Nop.Services.Forums;
 using Nop.Services.Gdpr;
 using Nop.Services.Helpers;
@@ -243,6 +244,7 @@ public partial class NopStartup : INopStartup
         services.AddTransient<IPassportService, PassportService>();
         services.AddTransient<IEducationService, EducationService>();
         services.AddTransient<IWorkService, WorkService>();
+        services.AddTransient<IFinanceService, FinanceService>();
 
         //attribute services
         services.AddScoped(typeof(IAttributeService<,>), typeof(AttributeService<,>));

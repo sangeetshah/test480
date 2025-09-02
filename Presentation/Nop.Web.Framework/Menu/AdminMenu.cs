@@ -121,6 +121,15 @@ public partial class AdminMenu : IAdminMenu
                     Url = GetMenuItemUrl("Work", "List"),
                     IconClass = "fas fa-briefcase"
                 },
+                //finance
+                new()
+                {
+                    SystemName = "Finance",
+                    Title = await _localizationService.GetResourceAsync("Admin.Finance"),
+                    PermissionNames = new List<string> { StandardPermission.Finance.ACCESS_FINANCE },
+                    Url = GetMenuItemUrl("Finance", "List"),
+                    IconClass = "fas fa-dollar-sign"
+                },
                 //catalog
                 new()
                 {

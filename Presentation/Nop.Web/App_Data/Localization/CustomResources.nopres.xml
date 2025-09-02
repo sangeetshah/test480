@@ -731,7 +731,194 @@
     <Value>Work deleted successfully.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Work.Exists">
-    <Value>Work with this applicant id & employment status is already exists.</Value>
+    <Value>
+    <![CDATA[Work with this applicant id & employment status is already exists.]]></Value>
   </LocaleResource>
   <!--Work-->
+
+  <!--Finance-->
+  <LocaleResource Name="Admin.Finance">
+    <Value>Finance</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.AddNew">
+    <Value>Add a new finance</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.BackToList">
+    <Value>back to finance list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.EditFinanceDetails">
+    <Value>Edit finance details</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Info">
+    <Value>Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Finances.RecordTypeEnum.BankAccount">
+    <Value>Bank account</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Finances.RecordTypeEnum.BankAvgWindow">
+    <Value>Bank avg window</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Finances.RecordTypeEnum.Asset">
+    <Value>Asset</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Finances.RecordTypeEnum.CreditCard">
+    <Value>Credit card</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Finances.AssetTypeEnum.Savings">
+    <Value>Savings</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Finances.AssetTypeEnum.FD">
+    <Value>FD</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Finances.AssetTypeEnum.MutualFund">
+    <Value>Mutual fund</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Finances.AssetTypeEnum.Shares">
+    <Value>Shares</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Finances.AssetTypeEnum.Bonds">
+    <Value>Bonds</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Finances.AssetTypeEnum.Other">
+    <Value>Other</Value>
+  </LocaleResource>  
+  <LocaleResource Name="Admin.Finance.List.SearchApplicantId">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.List.SearchApplicantId.Hint">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.List.SearchRecordTypeId">
+    <Value>Record type</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.List.SearchRecordTypeId.Hint">
+    <Value>Record type</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.ApplicantId">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.ApplicantId.Hint">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.ApplicantId.Required">
+    <Value>The applicant id is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.RecordTypeId">
+    <Value>Record type</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.RecordTypeId.Hint">
+    <Value>Record type</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.RecordTypeId.Required">
+    <Value>The record type is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.BankName">
+    <Value>Bank name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.BankName.Hint">
+    <Value>Bank name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.BankName.Required">
+    <Value>The bank name is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.AccountMask">
+    <Value>Account mask</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.AccountMask.Hint">
+    <Value>Account mask</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.AccountMask.Required">
+    <Value>The account mask is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.Currency">
+    <Value>Currency</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.Currency.Hint">
+    <Value>Currency</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.PeriodStart">
+    <Value>Period start</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.PeriodStart.Hint">
+    <Value>Period start</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.PeriodEnd">
+    <Value>Period end</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.PeriodEnd.Hint">
+    <Value>Period end</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.AvgBalance">
+    <Value>Avg balance</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.AvgBalance.Hint">
+    <Value>Avg balance</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.AssetTypeId">
+    <Value>Asset type</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.AssetTypeId.Hint">
+    <Value>Asset type</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.AssetTypeId.Required">
+    <Value>The asset type is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.Amount">
+    <Value>Amount</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.Amount.Hint">
+    <Value>Amount</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.Amount.Required">
+    <Value>Amount is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.Notes">
+    <Value>Notes</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.Notes.Hint">
+    <Value>Notes</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.CreatedAt">
+    <Value>Created at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.CreatedAt.Hint">
+    <Value>Created at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.CreatedBy">
+    <Value>Created by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.CreatedBy.Hint">
+    <Value>Created by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.UpdatedAt">
+    <Value>Updated at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.UpdatedAt.Hint">
+    <Value>Updated at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.UpdatedBy">
+    <Value>Updated by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.UpdatedBy.Hint">
+    <Value>Updated by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.DocumentId">
+    <Value>Document</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Fields.DocumentId.Hint">
+    <Value>Document</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Created">
+    <Value>Finance created successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Updated">
+    <Value>Finance updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Deleted">
+    <Value>Finance deleted successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Finance.Exists">
+    <Value><![CDATA[Finance with this applicant id & record type is already exists.]]></Value>
+  </LocaleResource>
+  <!--Finance-->
 </Language>

@@ -32,7 +32,7 @@ namespace Nop.Web.Areas.Admin.Factories
         /// Prepare work model
         /// </summary>
         /// <param name="model">Work model</param>
-        /// <param name="education">Work</param>
+        /// <param name="work">Work</param>
         /// <returns>
         /// A task that represents the asynchronous operation
         /// The task result contains the work model

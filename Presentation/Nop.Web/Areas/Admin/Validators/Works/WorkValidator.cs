@@ -10,10 +10,10 @@ namespace Nop.Web.Areas.Admin.Validators.Works
     {
         public WorkValidator(ILocalizationService localizationService)
         {
-            RuleFor(x => x.ApplicantId).NotEmpty().WithMessageAwait(localizationService.GetResourceAsync("Admin.Education.Fields.ApplicantId.Required"));
-            RuleFor(x => x.EmploymentStatusId).NotEmpty().WithMessageAwait(localizationService.GetResourceAsync("Admin.Education.Fields.StandardId.Required"));
-            RuleFor(x => x.JobTitle).NotEmpty().WithMessageAwait(localizationService.GetResourceAsync("Admin.Education.Fields.CourseName.Required"));
-            RuleFor(x => x.EmployerOrBusiness).NotEmpty().WithMessageAwait(localizationService.GetResourceAsync("Admin.Education.Fields.FieldOfStudy.Required"));
+            RuleFor(x => x.ApplicantId).NotEmpty().WithMessageAwait(localizationService.GetResourceAsync("Admin.Work.Fields.ApplicantId.Required"));
+            RuleFor(x => x.EmploymentStatusId).NotEmpty().WithMessageAwait(localizationService.GetResourceAsync("Admin.Work.Fields.EmploymentStatusId.Required"));
+            RuleFor(x => x.JobTitle).NotEmpty().WithMessageAwait(localizationService.GetResourceAsync("Admin.Work.Fields.JobTitle.Required"));
+            RuleFor(x => x.EmployerOrBusiness).NotEmpty().WithMessageAwait(localizationService.GetResourceAsync("Admin.Work.Fields.EmployerOrBusiness.Required"));
 
             SetDatabaseValidationRules<Work>();
         }

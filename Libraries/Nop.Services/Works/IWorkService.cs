@@ -19,7 +19,18 @@ namespace Nop.Services.Works
         Task<IPagedList<Work>> GetAllWorksAsync(int applicantId = 0, int employmentStatusId = 0, int pageIndex = 0, int pageSize = int.MaxValue);
 
         /// <summary>
-        /// Gets an work by work identifier
+        /// Gets a work
+        /// </summary>
+        /// <param name="applicantId">Applicant identifier</param>
+        /// <param name="employmentStatusId">Employment status identifier</param>
+        /// <returns>
+        /// A task that represents the asynchronous operation
+        /// The task result contains the work
+        /// </returns>
+        Task<Work> GetWorkByApplicantIdEmploymentStatusIdAsync(int applicantId, int employmentStatusId);
+
+        /// <summary>
+        /// Gets a work by work identifier
         /// </summary>
         /// <param name="workId">Work identifier</param>
         /// <returns>

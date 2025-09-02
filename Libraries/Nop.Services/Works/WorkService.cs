@@ -52,7 +52,24 @@ namespace Nop.Services.Works
         }
 
         /// <summary>
-        /// Gets an work by work identifier
+        /// Gets a work
+        /// </summary>
+        /// <param name="applicantId">Applicant identifier</param>
+        /// <param name="employmentStatusId">Employment status identifier</param>
+        /// <returns>
+        /// A task that represents the asynchronous operation
+        /// The task result contains the work
+        /// </returns>
+        public virtual async Task<Work> GetWorkByApplicantIdEmploymentStatusIdAsync(int applicantId, int employmentStatusId)
+        {
+            if (applicantId == 0 || employmentStatusId == 0)
+                return null;
+
+            return await _workRepository.Table.Where(x => x.ApplicantId == applicantId && x.EmploymentStatusId == employmentStatusId).FirstOrDefaultAsync();
+        }
+
+        /// <summary>
+        /// Gets a work by work identifier
         /// </summary>
         /// <param name="workId">Work identifier</param>
         /// <returns>

@@ -77,6 +77,10 @@ namespace Nop.Web.Areas.Admin.Controllers
         [CheckPermission(StandardPermission.Work.ACCESS_WORK)]
         public virtual async Task<IActionResult> Create(WorkModel model, bool continueEditing)
         {
+            var existWork = await _workService.GetWorkByApplicantIdEmploymentStatusIdAsync(model.ApplicantId, model.EmploymentStatusId);
+            if (existWork != null)
+                ModelState.AddModelError("", await _localizationService.GetResourceAsync("Admin.Work.Exists"));
+
             if (ModelState.IsValid)
             {
                 var work = model.ToEntity<Work>();
@@ -119,6 +123,10 @@ namespace Nop.Web.Areas.Admin.Controllers
             var work = await _workService.GetWorkByIdAsync(model.Id);
             if (work == null)
                 return RedirectToAction("List");
+
+            var existWork = await _workService.GetWorkByApplicantIdEmploymentStatusIdAsync(model.ApplicantId, model.EmploymentStatusId);
+            if (existWork != null && existWork.Id != work.Id)
+                ModelState.AddModelError("", await _localizationService.GetResourceAsync("Admin.Work.Exists"));
 
             if (ModelState.IsValid)
             {

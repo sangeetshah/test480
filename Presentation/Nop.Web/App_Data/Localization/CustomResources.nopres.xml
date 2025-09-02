@@ -730,5 +730,8 @@
   <LocaleResource Name="Admin.Work.Deleted">
     <Value>Work deleted successfully.</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Work.Exists">
+    <Value>Work with this applicant id & employment status is already exists.</Value>
+  </LocaleResource>
   <!--Work-->
 </Language>

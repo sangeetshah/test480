@@ -19,13 +19,13 @@ namespace Nop.Services.Finances
         Task<IPagedList<Finance>> GetAllFinancesAsync(int applicantId = 0, int recordTypeId = 0, int pageIndex = 0, int pageSize = int.MaxValue);
 
         /// <summary>
-        /// Gets a work
+        /// Gets a finance
         /// </summary>
         /// <param name="applicantId">Applicant identifier</param>
         /// <param name="recordTypeId">Record type identifier</param>
         /// <returns>
         /// A task that represents the asynchronous operation
-        /// The task result contains the work
+        /// The task result contains the finance
         /// </returns>
         Task<Finance> GetFinanceByApplicantIdRecordTypeIdAsync(int applicantId, int recordTypeId);
 

@@ -174,4 +174,9 @@ public partial class StandardPermission
     {
         public const string ACCESS_FINANCE = $"{nameof(Finance)}.AccessFinance";
     }
+
+    public partial class Health
+    {
+        public const string ACCESS_HEALTH = $"{nameof(Health)}.AccessHealth";
+    }
 }

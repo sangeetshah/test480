@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Language Name="English">  
+<Language Name="English">
   <!--Profile-->
   <LocaleResource Name="Admin.Profile">
     <Value>Profile</Value>
@@ -549,7 +549,7 @@
   </LocaleResource>
   <LocaleResource Name="Admin.Education.Fields.Certificate2Id.Hint">
     <Value>Certificate 2</Value>
-  </LocaleResource>  
+  </LocaleResource>
   <LocaleResource Name="Admin.Education.Created">
     <Value>Education created successfully.</Value>
   </LocaleResource>
@@ -732,7 +732,8 @@
   </LocaleResource>
   <LocaleResource Name="Admin.Work.Exists">
     <Value>
-    <![CDATA[Work with this applicant id & employment status is already exists.]]></Value>
+      <![CDATA[Work with this applicant id & employment status is already exists.]]>
+    </Value>
   </LocaleResource>
   <!--Work-->
 
@@ -781,7 +782,7 @@
   </LocaleResource>
   <LocaleResource Name="Enums.Nop.Core.Domain.Finances.AssetTypeEnum.Other">
     <Value>Other</Value>
-  </LocaleResource>  
+  </LocaleResource>
   <LocaleResource Name="Admin.Finance.List.SearchApplicantId">
     <Value>Applicant id</Value>
   </LocaleResource>
@@ -921,4 +922,112 @@
     <Value><![CDATA[Finance with this applicant id & record type is already exists.]]></Value>
   </LocaleResource>
   <!--Finance-->
+
+  <!--Health-->
+  <LocaleResource Name="Admin.Health">
+    <Value>Health</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.AddNew">
+    <Value>Add a new health</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.BackToList">
+    <Value>back to health list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.EditHealthDetails">
+    <Value>Edit health details</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Info">
+    <Value>Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Healths.RelevantConditionEnum.TB">
+    <Value>TB</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Healths.RelevantConditionEnum.BP">
+    <Value>BP</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Healths.RelevantConditionEnum.Heart">
+    <Value>Heart</Value>
+  </LocaleResource>
+  <LocaleResource Name="Enums.Nop.Core.Domain.Healths.RelevantConditionEnum.Other">
+    <Value>Other</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.List.SearchApplicantId">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.List.SearchApplicantId.Hint">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.List.SearchRelevantConditionId">
+    <Value>Relevant condition</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.List.SearchRelevantConditionId.Hint">
+    <Value>Relevant condition</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.ApplicantId">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.ApplicantId.Hint">
+    <Value>Applicant id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.ApplicantId.Required">
+    <Value>The applicant id is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.RelevantConditionId">
+    <Value>Relevant condition</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.RelevantConditionId.Hint">
+    <Value>Relevant condition</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.RelevantConditionId.Required">
+    <Value>The relevant condition is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.Notes">
+    <Value>Notes</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.Notes.Hint">
+    <Value>Notes</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.CreatedAt">
+    <Value>Created at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.CreatedAt.Hint">
+    <Value>Created at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.CreatedBy">
+    <Value>Created by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.CreatedBy.Hint">
+    <Value>Created by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.UpdatedAt">
+    <Value>Updated at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.UpdatedAt.Hint">
+    <Value>Updated at</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.UpdatedBy">
+    <Value>Updated by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.UpdatedBy.Hint">
+    <Value>Updated by</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.Record1Id">
+    <Value>Record 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Fields.Record1Id.Hint">
+    <Value>Record 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Created">
+    <Value>Health created successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Updated">
+    <Value>Health updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Deleted">
+    <Value>Health deleted successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Health.Exists">
+    <Value><![CDATA[Health with this applicant id & relevant condition is already exists.]]></Value>
+  </LocaleResource>
+  <!--Health-->
 </Language>

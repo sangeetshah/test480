@@ -165,3 +165,25 @@ CREATE TABLE [dbo].[Finance](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+--- Permission Health menu
+Insert Into [dbo].[PermissionRecord] values('Admin area. Access Health','Health.AccessHealth','Health')
+
+-------- Health
+CREATE TABLE [dbo].[Health](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ApplicantId] int NOT NULL,
+	[RelevantConditionId] int NOT NULL,
+	[Notes] nvarchar(400) NULL,
+	[CreatedAt] [datetime2](7) NOT NULL,
+	[CreatedBy] nvarchar(400) NULL,
+	[UpdatedAt] [datetime2](7) NULL,
+	[UpdatedBy] nvarchar(400) NULL,
+	[Record1Id] int NOT NULL default 0,
+	[Record2Id] int NOT NULL default 0
+ CONSTRAINT [PK_Health] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

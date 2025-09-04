@@ -13,6 +13,7 @@ using Nop.Core.Domain.Educations;
 using Nop.Core.Domain.Finances;
 using Nop.Core.Domain.Forums;
 using Nop.Core.Domain.Gdpr;
+using Nop.Core.Domain.Healths;
 using Nop.Core.Domain.Localization;
 using Nop.Core.Domain.Logging;
 using Nop.Core.Domain.Media;
@@ -52,6 +53,7 @@ using Nop.Web.Areas.Admin.Models.Educations;
 using Nop.Web.Areas.Admin.Models.ExternalAuthentication;
 using Nop.Web.Areas.Admin.Models.Finances;
 using Nop.Web.Areas.Admin.Models.Forums;
+using Nop.Web.Areas.Admin.Models.Healths;
 using Nop.Web.Areas.Admin.Models.Localization;
 using Nop.Web.Areas.Admin.Models.Logging;
 using Nop.Web.Areas.Admin.Models.Messages;
@@ -124,7 +126,8 @@ public partial class AdminMapperConfiguration : Profile, IOrderedMapperProfile
         CreateEducationsMaps();
         CreateWorksMaps();
         CreateFinancesMaps();
-
+        CreateHealthsMaps();
+        
         //add some generic mapping rules
         this.Internal().ForAllMaps((mapConfiguration, map) =>
         {
@@ -1829,6 +1832,20 @@ public partial class AdminMapperConfiguration : Profile, IOrderedMapperProfile
         CreateMap<FinanceModel, Finance>()
             .ForMember(entity => entity.RecordTypeEnum, options => options.Ignore())
             .ForMember(entity => entity.AssetTypeEnum, options => options.Ignore());
+    }
+
+    /// <summary>
+    /// Create healths maps 
+    /// </summary>
+    protected virtual void CreateHealthsMaps()
+    {
+        CreateMap<Health, HealthModel>()
+           .ForMember(entity => entity.ApplicantName, options => options.Ignore())
+           .ForMember(entity => entity.AvailableApplicants, options => options.Ignore())
+           .ForMember(entity => entity.RelevantCondition, options => options.Ignore())
+           .ForMember(entity => entity.AvailableRelevantConditions, options => options.Ignore());
+        CreateMap<HealthModel, Health>()
+            .ForMember(entity => entity.RelevantConditionEnum, options => options.Ignore());
     }
 
     #endregion

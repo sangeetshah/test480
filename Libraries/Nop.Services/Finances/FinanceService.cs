@@ -1,5 +1,4 @@
-﻿using DocumentFormat.OpenXml.ExtendedProperties;
-using Nop.Core;
+﻿using Nop.Core;
 using Nop.Core.Domain.Finances;
 using Nop.Data;
 
@@ -53,13 +52,13 @@ namespace Nop.Services.Finances
         }
 
         /// <summary>
-        /// Gets a work
+        /// Gets a finance
         /// </summary>
         /// <param name="applicantId">Applicant identifier</param>
         /// <param name="recordTypeId">Record type identifier</param>
         /// <returns>
         /// A task that represents the asynchronous operation
-        /// The task result contains the work
+        /// The task result contains the finance
         /// </returns>
         public virtual async Task<Finance> GetFinanceByApplicantIdRecordTypeIdAsync(int applicantId, int recordTypeId)
         {

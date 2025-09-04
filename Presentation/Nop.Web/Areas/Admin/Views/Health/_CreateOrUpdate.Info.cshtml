@@ -1,0 +1,90 @@
+@model HealthModel
+
+<div class="card-body">    
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="ApplicantId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="ApplicantId" asp-items="Model.AvailableApplicants" asp-required="true" />
+            <span asp-validation-for="ApplicantId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="RelevantConditionId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="RelevantConditionId" asp-items="Model.AvailableRelevantConditions" asp-required="true" />
+            <span asp-validation-for="RelevantConditionId"></span>
+        </div>
+    </div>    
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Notes" />
+        </div>
+        <div class="col-md-9">
+            <nop-textarea asp-for="Notes" />
+            <span asp-validation-for="Notes"></span>
+        </div>
+    </div>
+    @if (Model.Id > 0)
+    {
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="CreatedAt" />
+            </div>
+            <div class="col-md-9">
+                <div class="form-text-row">@Model.CreatedAt</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="CreatedBy" />
+            </div>
+            <div class="col-md-9">
+                <div class="form-text-row">@Model.CreatedBy</div>
+            </div>
+        </div>
+        if (Model.UpdatedAt.HasValue)
+        {
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="UpdatedAt" />
+                </div>
+                <div class="col-md-9">
+                    <div class="form-text-row">@Model.UpdatedAt</div>
+                </div>
+            </div>
+        }
+        if (!string.IsNullOrEmpty(Model.UpdatedBy))
+        {
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <nop-label asp-for="UpdatedBy" />
+                </div>
+                <div class="col-md-9">
+                    <div class="form-text-row">@Model.UpdatedBy</div>
+                </div>
+            </div>
+        }
+    }   
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Record1Id" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Record1Id" />
+            <span asp-validation-for="Record1Id"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Record2Id" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Record2Id" />
+            <span asp-validation-for="Record2Id"></span>
+        </div>
+    </div>
+</div>

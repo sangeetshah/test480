@@ -130,6 +130,15 @@ public partial class AdminMenu : IAdminMenu
                     Url = GetMenuItemUrl("Finance", "List"),
                     IconClass = "fas fa-dollar-sign"
                 },
+                //health
+                new()
+                {
+                    SystemName = "Health",
+                    Title = await _localizationService.GetResourceAsync("Admin.Health"),
+                    PermissionNames = new List<string> { StandardPermission.Health.ACCESS_HEALTH },
+                    Url = GetMenuItemUrl("Health", "List"),
+                    IconClass = "fas fa-notes-medical"
+                },
                 //catalog
                 new()
                 {

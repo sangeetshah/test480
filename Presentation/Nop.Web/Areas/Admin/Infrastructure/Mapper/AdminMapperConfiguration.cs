@@ -1774,7 +1774,14 @@ public partial class AdminMapperConfiguration : Profile, IOrderedMapperProfile
     {
         CreateMap<Nop.Core.Domain.Profiles.Profile, ProfileModel>()
             .ForMember(entity => entity.IsAdmin, options => options.Ignore())
-            .ForMember(entity => entity.SearchApplicantId, options => options.Ignore());
+            .ForMember(entity => entity.SearchApplicantId, options => options.Ignore())
+            .ForMember(entity => entity.AvailableGenders, options => options.Ignore())
+            .ForMember(entity => entity.AvailableCitizenship1Countries, options => options.Ignore())
+            .ForMember(entity => entity.AvailableCitizenship2Countries, options => options.Ignore())
+            .ForMember(entity => entity.AvailableAddress1Countries, options => options.Ignore())
+            .ForMember(entity => entity.AvailableAddress1States, options => options.Ignore())
+            .ForMember(entity => entity.AvailableAddress2Countries, options => options.Ignore())
+            .ForMember(entity => entity.AvailableAddress2States, options => options.Ignore());
         CreateMap<ProfileModel, Nop.Core.Domain.Profiles.Profile>();
     }
 

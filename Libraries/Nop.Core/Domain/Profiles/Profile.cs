@@ -1,5 +1,4 @@
-﻿
-namespace Nop.Core.Domain.Profiles;
+﻿namespace Nop.Core.Domain.Profiles;
 
 /// <summary>
 /// Represents a profile
@@ -12,28 +11,28 @@ public partial class Profile : BaseEntity
     public DateTime? DateOfBirth { get; set; }
     public string GenderCode { get; set; }
     public string PrimaryCitizenship { get; set; }
-    public string Citizenship1 { get; set; }
-    public string Citizenship2 { get; set; }
+    public int Citizenship1Id { get; set; }
+    public int Citizenship2Id { get; set; }
     public string Email { get; set; }
     public string Mobile1 { get; set; }
     public string Mobile2 { get; set; }
     public string WhtasppMobile { get; set; }
     public string Address1Line1 { get; set; }
-    public string Address1Line2 { get; set; }
-    public string Address1City { get; set; }
-    public string Address1StateProvince { get; set; }
+    public string Address1Line2 { get; set; }    
+    public int Address1CountryId { get; set; }
+    public int Address1StateProvinceId { get; set; }
     public string Address1PostalCode { get; set; }
-    public string Address1Country { get; set; }
+    public string Address1City { get; set; }
     public string Address2Line1 { get; set; }
-    public string Address2Line2 { get; set; }
-    public string Address2City { get; set; }
-    public string Address2StateProvince { get; set; }
+    public string Address2Line2 { get; set; }    
+    public int Address2CountryId { get; set; }
+    public int Address2StateProvinceId { get; set; }
     public string Address2PostalCode { get; set; }
-    public string Address2Country { get; set; }
+    public string Address2City { get; set; }
     public string MaritalStatusCode { get; set; }
     public bool HasSponsor { get; set; }
     public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; }
     public string CreatedBy { get; set; }
     public string UpdatedBy { get; set; }
     public string AadharNo { get; set; }

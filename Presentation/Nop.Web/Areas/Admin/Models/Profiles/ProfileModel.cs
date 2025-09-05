@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Nop.Web.Framework.Models;
 using Nop.Web.Framework.Mvc.ModelBinding;
 
@@ -9,6 +10,17 @@ namespace Nop.Web.Areas.Admin.Models.Profiles;
 /// </summary>
 public partial record ProfileModel : BaseNopEntityModel
 {
+    public ProfileModel()
+    {
+        AvailableGenders = new List<SelectListItem>();
+        AvailableCitizenship1Countries = new List<SelectListItem>();
+        AvailableCitizenship2Countries = new List<SelectListItem>();
+        AvailableAddress1Countries = new List<SelectListItem>();
+        AvailableAddress1States = new List<SelectListItem>();
+        AvailableAddress2Countries = new List<SelectListItem>();
+        AvailableAddress2States = new List<SelectListItem>();
+    }
+
     public bool IsAdmin { get; set; }
 
     [NopResourceDisplayName("Admin.Profile.Fields.ApplicantId")]
@@ -29,15 +41,18 @@ public partial record ProfileModel : BaseNopEntityModel
 
     [NopResourceDisplayName("Admin.Profile.Fields.GenderCode")]
     public string GenderCode { get; set; }
+    public IList<SelectListItem> AvailableGenders { get; set; }
 
     [NopResourceDisplayName("Admin.Profile.Fields.PrimaryCitizenship")]
     public string PrimaryCitizenship { get; set; }
 
     [NopResourceDisplayName("Admin.Profile.Fields.Citizenship1")]
-    public string Citizenship1 { get; set; }
+    public int Citizenship1Id { get; set; }
+    public IList<SelectListItem> AvailableCitizenship1Countries { get; set; }
 
     [NopResourceDisplayName("Admin.Profile.Fields.Citizenship2")]
-    public string Citizenship2 { get; set; }
+    public int Citizenship2Id { get; set; }
+    public IList<SelectListItem> AvailableCitizenship2Countries { get; set; }
 
     [NopResourceDisplayName("Admin.Profile.Fields.Email")]
     public string Email { get; set; }
@@ -57,35 +72,39 @@ public partial record ProfileModel : BaseNopEntityModel
     [NopResourceDisplayName("Admin.Profile.Fields.Address1Line2")]
     public string Address1Line2 { get; set; }
 
+    [NopResourceDisplayName("Admin.Profile.Fields.Address1Country")]
+    public int Address1CountryId { get; set; }
+    public IList<SelectListItem> AvailableAddress1Countries { get; set; }
+
+    [NopResourceDisplayName("Admin.Profile.Fields.Address1StateProvince")]
+    public int Address1StateProvinceId { get; set; }
+    public IList<SelectListItem> AvailableAddress1States { get; set; }
+
     [NopResourceDisplayName("Admin.Profile.Fields.Address1City")]
     public string Address1City { get; set; }
 
-    [NopResourceDisplayName("Admin.Profile.Fields.Address1StateProvince")]
-    public string Address1StateProvince { get; set; }
-
     [NopResourceDisplayName("Admin.Profile.Fields.Address1PostalCode")]
-    public string Address1PostalCode { get; set; }
-
-    [NopResourceDisplayName("Admin.Profile.Fields.Address1Country")]
-    public string Address1Country { get; set; }
+    public string Address1PostalCode { get; set; }    
 
     [NopResourceDisplayName("Admin.Profile.Fields.Address2Line1")]
     public string Address2Line1 { get; set; }
 
     [NopResourceDisplayName("Admin.Profile.Fields.Address2Line2")]
     public string Address2Line2 { get; set; }
+    
+    [NopResourceDisplayName("Admin.Profile.Fields.Address2Country")]
+    public int Address2CountryId { get; set; }
+    public IList<SelectListItem> AvailableAddress2Countries { get; set; }
+
+    [NopResourceDisplayName("Admin.Profile.Fields.Address2StateProvince")]
+    public int Address2StateProvinceId { get; set; }
+    public IList<SelectListItem> AvailableAddress2States { get; set; }
 
     [NopResourceDisplayName("Admin.Profile.Fields.Address2City")]
     public string Address2City { get; set; }
 
-    [NopResourceDisplayName("Admin.Profile.Fields.Address2StateProvince")]
-    public string Address2StateProvince { get; set; }
-
     [NopResourceDisplayName("Admin.Profile.Fields.Address2PostalCode")]
-    public string Address2PostalCode { get; set; }
-
-    [NopResourceDisplayName("Admin.Profile.Fields.Address2Country")]
-    public string Address2Country { get; set; }
+    public string Address2PostalCode { get; set; }    
 
     [NopResourceDisplayName("Admin.Profile.Fields.MaritalStatusCode")]
     public string MaritalStatusCode { get; set; }
@@ -97,7 +116,7 @@ public partial record ProfileModel : BaseNopEntityModel
     public DateTime CreatedAt { get; set; }
 
     [NopResourceDisplayName("Admin.Profile.Fields.UpdatedAt")]
-    public DateTime UpdatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; }
 
     [NopResourceDisplayName("Admin.Profile.Fields.CreatedBy")]
     public string CreatedBy { get; set; }

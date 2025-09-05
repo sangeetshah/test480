@@ -1,0 +1,189 @@
+@model ProfileModel
+
+<script>
+    $(function() {
+        $("#@Html.IdFor(model => model.Address1CountryId)").change(function() {
+            var selectedItem = $(this).val();
+            var ddlStates = $("#@Html.IdFor(model => model.Address1StateProvinceId)");
+
+            var postData = {
+                countryId: selectedItem,
+                addSelectStateItem: "true"
+            };
+
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: "@(Url.Action("GetStatesByCountryId", "Country"))",
+                data: postData,
+                success: function (data, textStatus, jqXHR) {
+                    ddlStates.html('');
+                    $.each(data, function(id, option) {
+                        ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                    });
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    $("#states1Alert").trigger("click");
+                }
+            });
+        });
+
+        $("#@Html.IdFor(model => model.Address2CountryId)").change(function() {
+            var selectedItem = $(this).val();
+            var ddlStates = $("#@Html.IdFor(model => model.Address2StateProvinceId)");
+
+            var postData = {
+                countryId: selectedItem,
+                addSelectStateItem: "true"
+            };
+
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: "@(Url.Action("GetStatesByCountryId", "Country"))",
+                data: postData,
+                success: function (data, textStatus, jqXHR) {
+                    ddlStates.html('');
+                    $.each(data, function(id, option) {
+                        ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                    });
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    $("#states2Alert").trigger("click");
+                }
+            });
+        });
+    });
+</script>
+
+<div class="card-body">
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Citizenship1Id" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="Citizenship1Id" asp-items="Model.AvailableCitizenship1Countries" />
+            <span asp-validation-for="Citizenship1Id"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Citizenship2Id" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="Citizenship2Id" asp-items="Model.AvailableCitizenship2Countries" />
+            <span asp-validation-for="Citizenship2Id"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1Line1" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address1Line1" />
+            <span asp-validation-for="Address1Line1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1Line2" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address1Line2" />
+            <span asp-validation-for="Address1Line2"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1CountryId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="Address1CountryId" asp-items="Model.AvailableAddress1Countries" />
+            <span asp-validation-for="Address1CountryId"></span>
+        </div>
+    </div>   
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1StateProvinceId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="Address1StateProvinceId" asp-items="Model.AvailableAddress1States" />
+            <span asp-validation-for="Address1StateProvinceId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1City" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address1City" />
+            <span asp-validation-for="Address1City"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address1PostalCode" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address1PostalCode" />
+            <span asp-validation-for="Address1PostalCode"></span>
+        </div>
+    </div>    
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2Line1" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address2Line1" />
+            <span asp-validation-for="Address2Line1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2Line2" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address2Line2" />
+            <span asp-validation-for="Address2Line2"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2CountryId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="Address2CountryId" asp-items="Model.AvailableAddress2Countries" />
+            <span asp-validation-for="Address2CountryId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2StateProvinceId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="Address2StateProvinceId" asp-items="Model.AvailableAddress2States" />
+            <span asp-validation-for="Address2StateProvinceId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2City" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address2City" />
+            <span asp-validation-for="Address2City"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="Address2PostalCode" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Address2PostalCode" />
+            <span asp-validation-for="Address2PostalCode"></span>
+        </div>
+    </div>       
+</div>
+
+<nop-alert asp-alert-id="states1Alert" asp-alert-message="@T("Admin.Common.Alert.States.Failed")" />
+<nop-alert asp-alert-id="states2Alert" asp-alert-message="@T("Admin.Common.Alert.States.Failed")" />

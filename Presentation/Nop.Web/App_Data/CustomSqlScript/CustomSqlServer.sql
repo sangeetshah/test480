@@ -1,6 +1,8 @@
 ﻿--- Permission Profile menu
 Insert Into [dbo].[PermissionRecord] values('Admin area. Access Profile','Profile.AccessProfile','Profile')
 
+--- Drop profile table
+DROP TABLE [dbo].[Profile]
 
 -------- Profile
 CREATE TABLE [dbo].[Profile](
@@ -11,28 +13,28 @@ CREATE TABLE [dbo].[Profile](
     [DateOfBirth] [datetime2](7) NULL,
 	[GenderCode] nvarchar(400) null,
 	[PrimaryCitizenship] nvarchar(400) null,
-	[Citizenship1] nvarchar(400) null,
-	[Citizenship2] nvarchar(400) null,
+	[Citizenship1Id] int not null default 0,
+	[Citizenship2Id] int not null default 0,
 	[Email] [nvarchar](400) NOT NULL,
 	[Mobile1] nvarchar(400) null,
 	[Mobile2] nvarchar(400) null,
 	[WhtasppMobile] nvarchar(400) null,
     [Address1Line1] nvarchar(400) null,
-	[Address1Line2] nvarchar(400) null,
+	[Address1Line2] nvarchar(400) null,	
+	[Address1CountryId] int not null default 0,
+	[Address1StateProvinceId] int not null default 0,
 	[Address1City] nvarchar(400) null,
-	[Address1StateProvince] nvarchar(400) null,
 	[Address1PostalCode] nvarchar(400) null,
-	[Address1Country] nvarchar(400) null,
 	[Address2Line1] nvarchar(400) null,
-	[Address2Line2] nvarchar(400) null,
+	[Address2Line2] nvarchar(400) null,	
+	[Address2CountryId] int not null default 0,
+	[Address2StateProvinceId] int not null default 0,
 	[Address2City] nvarchar(400) null,
-	[Address2StateProvince] nvarchar(400) null,
-	[Address2PostalCode] nvarchar(400) null,
-	[Address2Country] nvarchar(400) null,
+	[Address2PostalCode] nvarchar(400) null,	
 	[MaritalStatusCode] nvarchar(400) null,
 	[HasSponsor] [bit] NOT NULL,
 	[CreatedAt] [datetime2](7) NOT NULL,
-    [UpdatedAt] [datetime2](7) NOT NULL,
+    [UpdatedAt] [datetime2](7) NULL,
 	[CreatedBy] nvarchar(400) null,
 	[UpdatedBy] nvarchar(400) null,
 	[AadharNo] nvarchar(400) null,

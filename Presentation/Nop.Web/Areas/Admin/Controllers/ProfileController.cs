@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Nop.Core;
-using Nop.Core.Domain.Polls;
 using Nop.Core.Domain.Profiles;
 using Nop.Services.Localization;
 using Nop.Services.Messages;
@@ -84,9 +83,7 @@ public partial class ProfileController : BaseAdminController
                 var profile = model.ToEntity<Profile>();
 
                 profile.CreatedAt = DateTime.UtcNow;
-                profile.UpdatedAt = DateTime.UtcNow;
                 profile.CreatedBy = customer.Email;
-                profile.UpdatedBy = string.Empty;
 
                 await _profileService.InsertProfileAsync(profile);
 

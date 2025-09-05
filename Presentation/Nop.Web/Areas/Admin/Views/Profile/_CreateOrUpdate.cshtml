@@ -7,13 +7,20 @@
 
     const string hideInfoBlockAttributeName = "ProfilePage.HideInfoBlock";
     var hideInfoBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideInfoBlockAttributeName);
+
+    const string hideContactBlockAttributeName = "ProfilePage.HideContactBlock";
+    var hideContactBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideContactBlockAttributeName);
+
+    const string hideAddressBlockAttributeName = "ProfilePage.HideAddressBlock";
+    var hideAddressBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideAddressBlockAttributeName);
+
+    const string hideSocialBlockAttributeName = "ProfilePage.HideSocialBlock";
+    var hideSocialBlock = await genericAttributeService.GetAttributeAsync<bool>(customer, hideSocialBlockAttributeName);
 }
 
 <input asp-for="Id" type="hidden" />
 <input asp-for="CreatedAt" type="hidden" />
 <input asp-for="CreatedBy" type="hidden" />
-<input asp-for="UpdatedAt" type="hidden" />
-<input asp-for="UpdatedBy" type="hidden" />
 
 <section class="content">
     <div class="container-fluid">
@@ -23,7 +30,10 @@
                 {
                     <nop-card asp-name="profile-search" asp-icon="fas fa-magnifying-glass" asp-title="@T("Admin.Profile.Search")" asp-hide-block-attribute-name="@hideSearchBlockAttributeName" asp-hide="@hideSearchBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.Search", Model)</nop-card>
                 }
-                <nop-card asp-name="profile-info" asp-icon="fas fa-info" asp-title="@T("Admin.Profile.Info")" asp-hide-block-attribute-name="@hideInfoBlockAttributeName" asp-hide="@hideInfoBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.Info", Model)</nop-card>                
+                <nop-card asp-name="profile-info" asp-icon="fas fa-info" asp-title="@T("Admin.Profile.Info")" asp-hide-block-attribute-name="@hideInfoBlockAttributeName" asp-hide="@hideInfoBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.Info", Model)</nop-card>
+                <nop-card asp-name="profile-info" asp-icon="fas fa-info" asp-title="@T("Admin.Profile.Contact")" asp-hide-block-attribute-name="@hideContactBlockAttributeName" asp-hide="@hideContactBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.Contact", Model)</nop-card>
+                <nop-card asp-name="profile-info" asp-icon="fas fa-info" asp-title="@T("Admin.Profile.Address")" asp-hide-block-attribute-name="@hideAddressBlockAttributeName" asp-hide="@hideAddressBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.Address", Model)</nop-card>
+                <nop-card asp-name="profile-info" asp-icon="fas fa-info" asp-title="@T("Admin.Profile.Social")" asp-hide-block-attribute-name="@hideSocialBlockAttributeName" asp-hide="@hideSocialBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.Social", Model)</nop-card>
             </nop-cards>
         </div>
     </div>

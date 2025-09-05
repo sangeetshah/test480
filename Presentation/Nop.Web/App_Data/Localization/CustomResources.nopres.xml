@@ -10,6 +10,15 @@
   <LocaleResource Name="Admin.Profile.Info">
     <Value>Info</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Contact">
+    <Value>Contact</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Address">
+    <Value>Address</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Social">
+    <Value>Social</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.Profile.Fields.ApplicantId">
     <Value>Applicant id</Value>
   </LocaleResource>
@@ -48,6 +57,9 @@
   </LocaleResource>
   <LocaleResource Name="Admin.Profile.Fields.GenderCode.Hint">
     <Value>Gender code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.GenderCode.Required">
+    <Value>Gender code is required.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Profile.Fields.PrimaryCitizenship">
     <Value>Primary citizenship</Value>
@@ -167,10 +179,10 @@
     <Value>Address2 country</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Profile.Fields.MaritalStatusCode">
-    <Value>Marital status code</Value>
+    <Value>Marital status</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Profile.Fields.MaritalStatusCode.Hint">
-    <Value>Marital status code</Value>
+    <Value>Marital status</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Profile.Fields.HasSponsor">
     <Value>Has sponsor</Value>
@@ -261,6 +273,9 @@
   </LocaleResource>
   <LocaleResource Name="Admin.Profile.Updated">
     <Value>Profile updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Profile.Fields.MaximumCharsAllowed">
+    <Value>Maximum 150 characters allowed.</Value>
   </LocaleResource>
   <!--Profile-->
 

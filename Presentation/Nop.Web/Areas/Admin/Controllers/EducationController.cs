@@ -63,7 +63,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             return Json(model);
         }
 
-        [CheckPermission(StandardPermission.Education.ACCESS_EDUCATION)]
+        [CheckPermission(StandardPermission.Education.EDUCATION_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Create()
         {
             //prepare model
@@ -74,7 +74,7 @@ namespace Nop.Web.Areas.Admin.Controllers
 
         [HttpPost, ParameterBasedOnFormName("save-continue", "continueEditing")]
         [FormValueRequired("save", "save-continue")]
-        [CheckPermission(StandardPermission.Education.ACCESS_EDUCATION)]
+        [CheckPermission(StandardPermission.Education.EDUCATION_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Create(EducationModel model, bool continueEditing)
         {
             if (ModelState.IsValid)
@@ -100,7 +100,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             return View(model);
         }
 
-        [CheckPermission(StandardPermission.Education.ACCESS_EDUCATION)]
+        [CheckPermission(StandardPermission.Education.EDUCATION_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Edit(int id)
         {
             //try to get an education with the specified id
@@ -115,7 +115,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost, ParameterBasedOnFormName("save-continue", "continueEditing")]
-        [CheckPermission(StandardPermission.Education.ACCESS_EDUCATION)]
+        [CheckPermission(StandardPermission.Education.EDUCATION_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Edit(EducationModel model, bool continueEditing)
         {
             //try to get an education with the specified id
@@ -150,7 +150,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [CheckPermission(StandardPermission.Education.ACCESS_EDUCATION)]
+        [CheckPermission(StandardPermission.Education.EDUCATION_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Delete(int id)
         {
             //try to get an education with the specified id
@@ -166,7 +166,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [CheckPermission(StandardPermission.Education.ACCESS_EDUCATION)]
+        [CheckPermission(StandardPermission.Education.EDUCATION_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> DeleteSelected(ICollection<int> selectedIds)
         {
             if (selectedIds == null || !selectedIds.Any())

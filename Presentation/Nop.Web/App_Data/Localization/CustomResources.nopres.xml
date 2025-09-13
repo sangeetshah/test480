@@ -1045,4 +1045,13 @@
     <Value><![CDATA[Health with this applicant id & relevant condition is already exists.]]></Value>
   </LocaleResource>
   <!--Health-->
+
+  <!--ChangePassword-->
+  <LocaleResource Name="Admin.ChangePassword">
+    <Value>Change password</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ChangePassword.Info">
+    <Value>Info</Value>
+  </LocaleResource>
+  <!--ChangePassword-->
 </Language>

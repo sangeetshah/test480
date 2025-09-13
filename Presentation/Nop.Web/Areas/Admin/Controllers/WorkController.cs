@@ -63,7 +63,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             return Json(model);
         }
 
-        [CheckPermission(StandardPermission.Education.ACCESS_EDUCATION)]
+        [CheckPermission(StandardPermission.Work.WORK_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Create()
         {
             //prepare model
@@ -74,7 +74,7 @@ namespace Nop.Web.Areas.Admin.Controllers
 
         [HttpPost, ParameterBasedOnFormName("save-continue", "continueEditing")]
         [FormValueRequired("save", "save-continue")]
-        [CheckPermission(StandardPermission.Work.ACCESS_WORK)]
+        [CheckPermission(StandardPermission.Work.WORK_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Create(WorkModel model, bool continueEditing)
         {
             var existWork = await _workService.GetWorkByApplicantIdEmploymentStatusIdAsync(model.ApplicantId, model.EmploymentStatusId);
@@ -101,7 +101,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             return View(model);
         }
 
-        [CheckPermission(StandardPermission.Work.ACCESS_WORK)]
+        [CheckPermission(StandardPermission.Work.WORK_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Edit(int id)
         {
             //try to get an work with the specified id
@@ -116,7 +116,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost, ParameterBasedOnFormName("save-continue", "continueEditing")]
-        [CheckPermission(StandardPermission.Work.ACCESS_WORK)]
+        [CheckPermission(StandardPermission.Work.WORK_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Edit(WorkModel model, bool continueEditing)
         {
             //try to get an work with the specified id
@@ -155,7 +155,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [CheckPermission(StandardPermission.Work.ACCESS_WORK)]
+        [CheckPermission(StandardPermission.Work.WORK_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Delete(int id)
         {
             //try to get an work with the specified id
@@ -171,7 +171,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [CheckPermission(StandardPermission.Work.ACCESS_WORK)]
+        [CheckPermission(StandardPermission.Work.WORK_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> DeleteSelected(ICollection<int> selectedIds)
         {
             if (selectedIds == null || !selectedIds.Any())

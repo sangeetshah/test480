@@ -88,6 +88,15 @@ public partial class AdminMenu : IAdminMenu
                 //profile
                 new()
                 {
+                    SystemName = "ChangePassword",
+                    Title = await _localizationService.GetResourceAsync("Admin.ChangePassword"),
+                    PermissionNames = new List<string> { StandardPermission.ChangePassword.ACCESS_CHANGE_PASSWORD },
+                    Url = GetMenuItemUrl("ChangePassword", "Edit"),
+                    IconClass = "fas fa-key"
+                },
+                //profile
+                new()
+                {
                     SystemName = "Profile",
                     Title = await _localizationService.GetResourceAsync("Admin.Profile"),
                     PermissionNames = new List<string> { StandardPermission.Profile.ACCESS_PROFILE },

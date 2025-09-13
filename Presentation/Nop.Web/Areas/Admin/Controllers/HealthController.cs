@@ -63,7 +63,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             return Json(model);
         }
 
-        [CheckPermission(StandardPermission.Health.ACCESS_HEALTH)]
+        [CheckPermission(StandardPermission.Health.HEALTH_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Create()
         {
             //prepare model
@@ -74,7 +74,7 @@ namespace Nop.Web.Areas.Admin.Controllers
 
         [HttpPost, ParameterBasedOnFormName("save-continue", "continueEditing")]
         [FormValueRequired("save", "save-continue")]
-        [CheckPermission(StandardPermission.Health.ACCESS_HEALTH)]
+        [CheckPermission(StandardPermission.Health.HEALTH_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Create(HealthModel model, bool continueEditing)
         {
             var existHealth = await _healthService.GetHealthByApplicantIdRelevantConditionIdAsync(model.ApplicantId, model.RelevantConditionId);
@@ -102,7 +102,7 @@ namespace Nop.Web.Areas.Admin.Controllers
             return View(model);
         }
 
-        [CheckPermission(StandardPermission.Health.ACCESS_HEALTH)]
+        [CheckPermission(StandardPermission.Health.HEALTH_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Edit(int id)
         {
             //try to get an health with the specified id
@@ -117,7 +117,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost, ParameterBasedOnFormName("save-continue", "continueEditing")]
-        [CheckPermission(StandardPermission.Health.ACCESS_HEALTH)]
+        [CheckPermission(StandardPermission.Health.HEALTH_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Edit(HealthModel model, bool continueEditing)
         {
             //try to get an health with the specified id
@@ -156,7 +156,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [CheckPermission(StandardPermission.Health.ACCESS_HEALTH)]
+        [CheckPermission(StandardPermission.Health.HEALTH_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> Delete(int id)
         {
             //try to get an health with the specified id
@@ -172,7 +172,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [CheckPermission(StandardPermission.Health.ACCESS_HEALTH)]
+        [CheckPermission(StandardPermission.Health.HEALTH_CREATE_EDIT_DELETE)]
         public virtual async Task<IActionResult> DeleteSelected(ICollection<int> selectedIds)
         {
             if (selectedIds == null || !selectedIds.Any())

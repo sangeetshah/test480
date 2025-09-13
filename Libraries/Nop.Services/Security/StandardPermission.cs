@@ -153,30 +153,41 @@ public partial class StandardPermission
     public partial class Profile
     {
         public const string ACCESS_PROFILE = $"{nameof(Profile)}.AccessProfile";
+        public const string PROFILE_CREATE_EDIT_DELETE = $"{nameof(Profile)}.CreateEditDelete";
     }
 
     public partial class Passport
     {
         public const string ACCESS_PASSPORT = $"{nameof(Passport)}.AccessPassport";
+        public const string PASSPORT_CREATE_EDIT_DELETE = $"{nameof(Passport)}.CreateEditDelete";
     }
 
     public partial class Education
     {
         public const string ACCESS_EDUCATION = $"{nameof(Education)}.AccessEducation";
+        public const string EDUCATION_CREATE_EDIT_DELETE = $"{nameof(Education)}.CreateEditDelete";
     }
 
     public partial class Work
     {
         public const string ACCESS_WORK = $"{nameof(Work)}.AccessWork";
+        public const string WORK_CREATE_EDIT_DELETE = $"{nameof(Work)}.CreateEditDelete";
     }
 
     public partial class Finance
     {
         public const string ACCESS_FINANCE = $"{nameof(Finance)}.AccessFinance";
+        public const string FINANCE_CREATE_EDIT_DELETE = $"{nameof(Finance)}.CreateEditDelete";
     }
 
     public partial class Health
     {
         public const string ACCESS_HEALTH = $"{nameof(Health)}.AccessHealth";
+        public const string HEALTH_CREATE_EDIT_DELETE = $"{nameof(Health)}.CreateEditDelete";
+    }
+
+    public partial class ChangePassword
+    {
+        public const string ACCESS_CHANGE_PASSWORD = $"{nameof(ChangePassword)}.AccessChangePassword";
     }
 }

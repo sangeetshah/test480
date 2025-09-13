@@ -1,5 +1,6 @@
 ﻿--- Permission Profile menu
 Insert Into [dbo].[PermissionRecord] values('Admin area. Access Profile','Profile.AccessProfile','Profile')
+Insert Into [dbo].[PermissionRecord] values('Admin area. Profile Create, edit, delete','Profile.CreateEditDelete','Profile')
 
 --- Drop profile table
 DROP TABLE [dbo].[Profile]
@@ -55,6 +56,7 @@ GO
 
 --- Permission Passport menu
 Insert Into [dbo].[PermissionRecord] values('Admin area. Access Passport','Passport.AccessPassport','Passport')
+Insert Into [dbo].[PermissionRecord] values('Admin area. Passport Create, edit, delete','Passport.CreateEditDelete','Passport')
 
 -------- Passport
 CREATE TABLE [dbo].[Passport](
@@ -81,6 +83,7 @@ GO
 
 --- Permission Education menu
 Insert Into [dbo].[PermissionRecord] values('Admin area. Access Education','Education.AccessEducation','Education')
+Insert Into [dbo].[PermissionRecord] values('Admin area. Education Create, edit, delete','Education.CreateEditDelete','Education')
 
 -------- Education
 CREATE TABLE [dbo].[Education](
@@ -110,6 +113,7 @@ GO
 
 --- Permission Work menu
 Insert Into [dbo].[PermissionRecord] values('Admin area. Access Work','Work.AccessWork','Work')
+Insert Into [dbo].[PermissionRecord] values('Admin area. Work Create, edit, delete','Work.CreateEditDelete','Work')
 
 -------- Work
 CREATE TABLE [dbo].[Work](
@@ -141,6 +145,7 @@ GO
 
 --- Permission Finance menu
 Insert Into [dbo].[PermissionRecord] values('Admin area. Access Finance','Finance.AccessFinance','Finance')
+Insert Into [dbo].[PermissionRecord] values('Admin area. Finance Create, edit, delete','Finance.CreateEditDelete','Finance')
 
 -------- Finance
 CREATE TABLE [dbo].[Finance](
@@ -170,6 +175,7 @@ GO
 
 --- Permission Health menu
 Insert Into [dbo].[PermissionRecord] values('Admin area. Access Health','Health.AccessHealth','Health')
+Insert Into [dbo].[PermissionRecord] values('Admin area. Health Health Create, edit, delete','Health.CreateEditDelete','Health')
 
 -------- Health
 CREATE TABLE [dbo].[Health](
@@ -189,3 +195,7 @@ CREATE TABLE [dbo].[Health](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
+--- Permission ChangePassword menu
+Insert Into [dbo].[PermissionRecord] values('Admin area. Access ChangePassword','ChangePassword.AccessChangePassword','ChangePassword')

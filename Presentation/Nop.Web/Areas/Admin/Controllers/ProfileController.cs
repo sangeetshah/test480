@@ -65,7 +65,7 @@ public partial class ProfileController : BaseAdminController
     }
 
     [HttpPost]
-    [CheckPermission(StandardPermission.Profile.ACCESS_PROFILE)]
+    [CheckPermission(StandardPermission.Profile.PROFILE_CREATE_EDIT_DELETE)]
     public virtual async Task<IActionResult> Create(ProfileModel model)
     {
         var existProfile = await _profileService.GetProfileByApplicantIdAsync(model.ApplicantId);

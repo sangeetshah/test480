@@ -1265,5 +1265,24 @@ public partial class CustomerModelFactory : ICustomerModelFactory
         return model;
     }
 
+    /// <summary>
+    /// Prepare the change password model
+    /// </summary>
+    /// <param name="customer">Customer</param>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the change password model
+    /// </returns>
+    public virtual async Task<ChangePasswordModel> PrepareChangePasswordModelAsync(Customer customer)
+    {
+        ArgumentNullException.ThrowIfNull(customer);
+
+        return new ChangePasswordModel()
+        {
+            PasswordExpired = await _customerService.IsPasswordExpiredAsync(customer),
+            PasswordMustBeChanged = customer.MustChangePassword
+        };
+    }
+
     #endregion
 }

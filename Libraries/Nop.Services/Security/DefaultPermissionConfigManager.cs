@@ -168,36 +168,48 @@ public partial class DefaultPermissionConfigManager : IPermissionConfigManager
         #region Profile
 
         new ("Admin area. Access Profile", StandardPermission.Profile.ACCESS_PROFILE, nameof(StandardPermission.Profile), NopCustomerDefaults.AdministratorsRoleName),
+        new ("Admin area. Profile Create, edit, delete", StandardPermission.Profile.PROFILE_CREATE_EDIT_DELETE, nameof(StandardPermission.Profile), NopCustomerDefaults.AdministratorsRoleName),
 
         #endregion
 
         #region Passport
 
         new ("Admin area. Access Passport", StandardPermission.Passport.ACCESS_PASSPORT, nameof(StandardPermission.Passport), NopCustomerDefaults.AdministratorsRoleName),
+        new ("Admin area. Passport Create, edit, delete", StandardPermission.Passport.PASSPORT_CREATE_EDIT_DELETE, nameof(StandardPermission.Passport), NopCustomerDefaults.AdministratorsRoleName),
 
         #endregion
 
         #region Education
 
         new ("Admin area. Access Education", StandardPermission.Education.ACCESS_EDUCATION, nameof(StandardPermission.Education), NopCustomerDefaults.AdministratorsRoleName),
+        new ("Admin area. Education Create, edit, delete", StandardPermission.Education.EDUCATION_CREATE_EDIT_DELETE, nameof(StandardPermission.Education), NopCustomerDefaults.AdministratorsRoleName),
 
         #endregion
 
         #region Work
 
         new ("Admin area. Access Work", StandardPermission.Work.ACCESS_WORK, nameof(StandardPermission.Work), NopCustomerDefaults.AdministratorsRoleName),
+        new ("Admin area. Work Create, edit, delete", StandardPermission.Work.WORK_CREATE_EDIT_DELETE, nameof(StandardPermission.Work), NopCustomerDefaults.AdministratorsRoleName),
 
         #endregion
 
         #region Finance
 
         new ("Admin area. Access Finance", StandardPermission.Finance.ACCESS_FINANCE, nameof(StandardPermission.Finance), NopCustomerDefaults.AdministratorsRoleName),
+        new ("Admin area. Finance Create, edit, delete", StandardPermission.Finance.FINANCE_CREATE_EDIT_DELETE, nameof(StandardPermission.Finance), NopCustomerDefaults.AdministratorsRoleName),
 
         #endregion
 
         #region Health
 
         new ("Admin area. Access Health", StandardPermission.Health.ACCESS_HEALTH, nameof(StandardPermission.Health), NopCustomerDefaults.AdministratorsRoleName),
+        new ("Admin area. Health Create, edit, delete", StandardPermission.Health.HEALTH_CREATE_EDIT_DELETE, nameof(StandardPermission.Health), NopCustomerDefaults.AdministratorsRoleName),
+
+        #endregion
+
+        #region ChangePassword
+
+        new ("Admin area. Access ChangePassword", StandardPermission.ChangePassword.ACCESS_CHANGE_PASSWORD, nameof(StandardPermission.ChangePassword), NopCustomerDefaults.AdministratorsRoleName),       
 
         #endregion
     };

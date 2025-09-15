@@ -3,6 +3,7 @@ using Nop.Core;
 using Nop.Core.Domain.Works;
 using Nop.Services.Localization;
 using Nop.Services.Messages;
+using Nop.Services.Profiles;
 using Nop.Services.Security;
 using Nop.Services.Works;
 using Nop.Web.Areas.Admin.Factories;
@@ -22,6 +23,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         protected readonly INotificationService _notificationService;
         protected readonly ILocalizationService _localizationService;
         protected readonly IWorkContext _workContext;
+        protected readonly IProfileService _profileService;
 
         #endregion
 
@@ -31,13 +33,15 @@ namespace Nop.Web.Areas.Admin.Controllers
                               IWorkService workService,
                               INotificationService notificationService,
                               ILocalizationService localizationService,
-                              IWorkContext workContext)
+                              IWorkContext workContext,
+                              IProfileService profileService)
         {
             _workModelFactory = workModelFactory;
             _workService = workService;
             _notificationService = notificationService;
             _localizationService = localizationService;
             _workContext = workContext;
+            _profileService = profileService;
         }
 
         #endregion
@@ -182,6 +186,20 @@ namespace Nop.Web.Areas.Admin.Controllers
                 await _workService.DeleteWorksAsync(works);
 
             return Json(new { Result = true });
+        }
+
+        [HttpPost]
+        public virtual async Task<IActionResult> GetWorkCompletionPercentage(string applicantId)
+        {
+            var profile = await _profileService.GetProfileByApplicantIdAsync(applicantId);
+
+            var percentage = await _workService.GetWorkCompletionPercentageAsync(profile != null ? profile.Id : 0);
+
+            return Json(new
+            {
+                Filled = percentage,
+                Empty = 100 - percentage
+            });
         }
 
         #endregion

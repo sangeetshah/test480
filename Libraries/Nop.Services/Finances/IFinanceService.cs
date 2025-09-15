@@ -76,5 +76,12 @@ namespace Nop.Services.Finances
         /// <param name="finances">Finances</param>
         /// <returns>A task that represents the asynchronous operation</returns>
         Task DeleteFinancesAsync(IList<Finance> finances);
+
+        /// <summary> 
+        /// Get finance completion percentage
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <returns></returns>
+        Task<double> GetFinanceCompletionPercentageAsync(int applicantId);
     }
 }

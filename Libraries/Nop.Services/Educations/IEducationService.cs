@@ -65,5 +65,12 @@ namespace Nop.Services.Educations
         /// <param name="educations">Educations</param>
         /// <returns>A task that represents the asynchronous operation</returns>
         Task DeleteEducationsAsync(IList<Education> educations);
+
+        /// <summary> 
+        /// Get education completion percentage
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <returns></returns>
+        Task<double> GetEducationCompletionPercentageAsync(int applicantId);
     }
 }

@@ -4,6 +4,7 @@ using Nop.Core.Domain.Educations;
 using Nop.Services.Educations;
 using Nop.Services.Localization;
 using Nop.Services.Messages;
+using Nop.Services.Profiles;
 using Nop.Services.Security;
 using Nop.Web.Areas.Admin.Factories;
 using Nop.Web.Areas.Admin.Infrastructure.Mapper.Extensions;
@@ -22,6 +23,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         protected readonly INotificationService _notificationService;
         protected readonly ILocalizationService _localizationService;
         protected readonly IWorkContext _workContext;
+        protected readonly IProfileService _profileService;
 
         #endregion
 
@@ -31,13 +33,15 @@ namespace Nop.Web.Areas.Admin.Controllers
                                    IEducationService educationService,
                                    INotificationService notificationService,
                                    ILocalizationService localizationService,
-                                   IWorkContext workContext)
+                                   IWorkContext workContext,
+                                   IProfileService profileService)
         {
             _educationModelFactory = educationModelFactory;
             _educationService = educationService;
             _notificationService = notificationService;
             _localizationService = localizationService;
             _workContext = workContext;
+            _profileService = profileService;
         }
 
         #endregion
@@ -177,6 +181,20 @@ namespace Nop.Web.Areas.Admin.Controllers
                 await _educationService.DeleteEducationsAsync(educations);
 
             return Json(new { Result = true });
+        }
+
+        [HttpPost]
+        public virtual async Task<IActionResult> GetEducationCompletionPercentage(string applicantId)
+        {
+            var profile = await _profileService.GetProfileByApplicantIdAsync(applicantId);
+
+            var percentage = await _educationService.GetEducationCompletionPercentageAsync(profile != null ? profile.Id : 0);
+
+            return Json(new
+            {
+                Filled = percentage,
+                Empty = 100 - percentage
+            });
         }
 
         #endregion

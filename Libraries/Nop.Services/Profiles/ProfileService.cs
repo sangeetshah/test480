@@ -1,5 +1,6 @@
 ﻿using Nop.Core.Domain.Profiles;
 using Nop.Data;
+using Nop.Services.Common;
 
 namespace Nop.Services.Profiles;
 
@@ -92,6 +93,20 @@ public partial class ProfileService : IProfileService
 
             return query;
         }, cache => default);
+    }
+
+    /// <summary> 
+    /// Get profile completion percentage
+    /// </summary>
+    /// <param name="applicantId"></param>
+    /// <returns></returns>
+    public virtual async Task<double> GetProfileCompletionPercentageAsync(string applicantId)
+    {
+        var profile = await GetProfileByApplicantIdAsync(applicantId);
+        if (profile == null)
+            return 0;
+
+        return EntityCompletionHelper.GetCompletionPercentage(profile);
     }
 
     #endregion

@@ -1,0 +1,87 @@
+﻿@model ProfileModel
+
+@{
+    const string prefix = "profile-completion-chart";
+    const string hideCardAttributeName = "Reports.HideProfileCompletionChartCard";
+    var hideCard = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideCardAttributeName);
+}
+
+<script src="~/lib_npm/chart.js/chart.umd.min.js"></script>
+
+<div class="card card-primary card-outline @if (hideCard){ <text>collapsed-card</text> }" id="@(prefix)-card">
+    <div class="card-header with-border">
+        <h3 class="card-title">
+            <i class="fas fa-chart-pie"></i>
+            @T("Admin.ProfileCompletion")
+        </h3>
+        <div class="card-tools float-right">
+            <button type="button" class="btn btn-tool margin-l-10" data-card-widget="collapse">
+                @if (hideCard)
+                {
+                     <text><i class="fas fa-plus"></i></text>
+                }
+                else
+                {
+                     <text><i class="fas fa-minus"></i></text>
+                }
+            </button>
+        </div>
+    </div>
+
+    <br />
+
+    <section class="content" style="padding-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="form-horizontal">
+                <div class="cards-group">
+                    <div class="card card-default card-search">
+                        <div class="card-body">
+                            <div class="search-body">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <nop-label asp-for="ApplicantId" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <nop-editor asp-for="ApplicantId" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-center col-12">
+                                        <button type="button" id="generate-chart" class="btn btn-primary btn-search">
+                                            <i class="far fa-chart-bar"></i>
+                                            Generate chart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="card-body" style="display: flex; flex-wrap: wrap; gap: 20px;">
+        @* Profile chart *@
+        @await Html.PartialAsync("_ProfileChart", Model)
+    
+        @* Passport chart *@
+        @await Html.PartialAsync("_PassportChart", Model)
+
+        @* Education chart *@
+        @await Html.PartialAsync("_EducationChart", Model)
+
+        @* Work chart *@
+        @await Html.PartialAsync("_WorkChart", Model)
+
+        @* Finance chart *@
+        @await Html.PartialAsync("_FinanceChart", Model)
+
+        @* Health chart *@
+        @await Html.PartialAsync("_HealthChart", Model)
+    </div>
+</div>

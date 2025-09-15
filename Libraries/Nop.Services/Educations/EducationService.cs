@@ -1,6 +1,7 @@
 ﻿using Nop.Core;
 using Nop.Core.Domain.Educations;
 using Nop.Data;
+using Nop.Services.Common;
 
 namespace Nop.Services.Educations
 {
@@ -115,6 +116,20 @@ namespace Nop.Services.Educations
         public virtual async Task DeleteEducationsAsync(IList<Education> educations)
         {
             await _educationRepository.DeleteAsync(educations);
+        }
+
+        /// <summary> 
+        /// Get education completion percentage
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <returns></returns>
+        public virtual async Task<double> GetEducationCompletionPercentageAsync(int applicantId)
+        {
+            var education = await _educationRepository.Table.Where(x => x.ApplicantId == applicantId).FirstOrDefaultAsync();
+            if (education == null)
+                return 0;
+
+            return EntityCompletionHelper.GetCompletionPercentage(education);
         }
     }
 

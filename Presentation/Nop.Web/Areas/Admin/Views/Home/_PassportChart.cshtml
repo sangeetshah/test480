@@ -1,0 +1,56 @@
+﻿@model ProfileModel
+
+<div class="col-md-4 passport-pie-chart" style="display: none; max-width: 30% !important;">
+    <div class="card card-info">
+        <div class="card-header clearfix" style="background-color: #ffffff;">
+            <div class="float-left" style="color: #000000;">Passport</div>
+        </div>
+        <div class="card-body">
+            <canvas id="passport-chart" height="300"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    var passportCtx = document.getElementById('passport-chart').getContext('2d');
+    var passportChart;
+
+    $("#generate-chart").click(function () {
+        var applicantId = $("#ApplicantId").val();
+
+        $.ajax({
+            url: '@Url.Action("GetPassportCompletionPercentage", "Passport", new { area = "Admin" })',
+            type: 'POST',
+            data: {
+                applicantId: applicantId,
+                __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+            },
+            success: function (data) {
+                $('.passport-pie-chart').css("display", "block");
+
+                if (passportChart) {
+                    passportChart.destroy();
+                }
+
+                passportChart = new Chart(passportCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Filled', 'Empty'],
+                        datasets: [{
+                            data: [data.Filled, data.Empty],
+                            backgroundColor: ['#4CAF50', '#f44336']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>

@@ -78,5 +78,12 @@ namespace Nop.Services.Passports
         /// <param name="passports">Passports</param>
         /// <returns>A task that represents the asynchronous operation</returns>
         Task DeletePassportsAsync(IList<Passport> passports);
+
+        /// <summary> 
+        /// Get passport completion percentage
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <returns></returns>
+        Task<double> GetPassportCompletionPercentageAsync(int applicantId);
     }
 }

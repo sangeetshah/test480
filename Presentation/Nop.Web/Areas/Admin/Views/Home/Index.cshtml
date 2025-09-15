@@ -39,7 +39,11 @@
                             </div>
                         </div>
                     }
-
+                    <div class="row">
+                        <div class="col-md-12">
+                            @await Component.InvokeAsync(typeof(ProfileCompletionViewComponent))
+                        </div>
+                    </div>
                     @await Component.InvokeAsync(typeof(AdminWidgetViewComponent), new { widgetZone = AdminWidgetZones.DashboardTop, additionalData = Model })
                     @if (!Model.IsLoggedInAsVendor)
                     {

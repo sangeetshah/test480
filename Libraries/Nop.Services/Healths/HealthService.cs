@@ -1,6 +1,7 @@
 ﻿using Nop.Core;
 using Nop.Core.Domain.Healths;
 using Nop.Data;
+using Nop.Services.Common;
 
 namespace Nop.Services.Healths
 {
@@ -132,6 +133,20 @@ namespace Nop.Services.Healths
         public virtual async Task DeleteHealthsAsync(IList<Health> healths)
         {
             await _healthRepository.DeleteAsync(healths);
+        }
+
+        /// <summary> 
+        /// Get health completion percentage
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <returns></returns>
+        public virtual async Task<double> GetHealthCompletionPercentageAsync(int applicantId)
+        {
+            var health = await _healthRepository.Table.Where(x => x.ApplicantId == applicantId).FirstOrDefaultAsync();
+            if (health == null)
+                return 0;
+
+            return EntityCompletionHelper.GetCompletionPercentage(health);
         }
 
         #endregion

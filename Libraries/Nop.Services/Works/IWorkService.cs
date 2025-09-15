@@ -76,5 +76,12 @@ namespace Nop.Services.Works
         /// <param name="works">Works</param>
         /// <returns>A task that represents the asynchronous operation</returns>
         Task DeleteWorksAsync(IList<Work> works);
+
+        /// <summary> 
+        /// Get work completion percentage
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <returns></returns>
+        Task<double> GetWorkCompletionPercentageAsync(int applicantId);
     }
 }

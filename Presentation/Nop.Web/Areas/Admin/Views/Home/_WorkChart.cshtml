@@ -1,0 +1,56 @@
+﻿@model ProfileModel
+
+<div class="col-md-4 work-pie-chart" style="display: none; max-width: 30% !important;">
+    <div class="card card-info">
+        <div class="card-header clearfix" style="background-color: #ffffff;">
+            <div class="float-left" style="color: #000000;">Work</div>
+        </div>
+        <div class="card-body">
+            <canvas id="work-chart" height="300"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    var workCtx = document.getElementById('work-chart').getContext('2d');
+    var workChart;
+
+    $("#generate-chart").click(function () {
+        var applicantId = $("#ApplicantId").val();
+
+        $.ajax({
+            url: '@Url.Action("GetWorkCompletionPercentage", "Work", new { area = "Admin" })',
+            type: 'POST',
+            data: {
+                applicantId: applicantId,
+                __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+            },
+            success: function (data) {
+                $('.work-pie-chart').css("display", "block");
+
+                if (workChart) {
+                    workChart.destroy();
+                }
+
+                workChart = new Chart(workCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Filled', 'Empty'],
+                        datasets: [{
+                            data: [data.Filled, data.Empty],
+                            backgroundColor: ['#4CAF50', '#f44336']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>

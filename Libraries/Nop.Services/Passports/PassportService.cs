@@ -1,6 +1,7 @@
 ﻿using Nop.Core;
 using Nop.Core.Domain.Passports;
 using Nop.Data;
+using Nop.Services.Common;
 
 namespace Nop.Services.Passports
 {
@@ -131,6 +132,20 @@ namespace Nop.Services.Passports
         public virtual async Task DeletePassportsAsync(IList<Passport> passports)
         {
             await _passportRepository.DeleteAsync(passports);
+        }
+
+        /// <summary> 
+        /// Get passport completion percentage
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <returns></returns>
+        public virtual async Task<double> GetPassportCompletionPercentageAsync(int applicantId)
+        {
+            var passport = await _passportRepository.Table.Where(x => x.ApplicantId == applicantId).FirstOrDefaultAsync();
+            if (passport == null)
+                return 0;
+
+            return EntityCompletionHelper.GetCompletionPercentage(passport);
         }
 
         #endregion

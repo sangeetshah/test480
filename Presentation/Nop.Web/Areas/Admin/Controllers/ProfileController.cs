@@ -111,5 +111,17 @@ public partial class ProfileController : BaseAdminController
         return View(model);
     }
 
+    [HttpPost]
+    public virtual async Task<IActionResult> GetProfileCompletionPercentage(string applicantId)
+    {
+        var percentage = await _profileService.GetProfileCompletionPercentageAsync(applicantId);
+
+        return Json(new
+        {
+            Filled = percentage,
+            Empty = 100 - percentage
+        });
+    }
+
     #endregion
 }

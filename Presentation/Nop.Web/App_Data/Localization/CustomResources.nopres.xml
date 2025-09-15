@@ -1054,4 +1054,9 @@
     <Value>Info</Value>
   </LocaleResource>
   <!--ChangePassword-->
+
+
+  <LocaleResource Name="Admin.ProfileCompletion">
+    <Value>Profile completion</Value>
+  </LocaleResource>
 </Language>

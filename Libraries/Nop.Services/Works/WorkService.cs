@@ -1,6 +1,7 @@
 ﻿using Nop.Core;
 using Nop.Core.Domain.Works;
 using Nop.Data;
+using Nop.Services.Common;
 
 namespace Nop.Services.Works
 {
@@ -132,6 +133,20 @@ namespace Nop.Services.Works
         public virtual async Task DeleteWorksAsync(IList<Work> works)
         {
             await _workRepository.DeleteAsync(works);
+        }
+
+        /// <summary> 
+        /// Get work completion percentage
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <returns></returns>
+        public virtual async Task<double> GetWorkCompletionPercentageAsync(int applicantId)
+        {
+            var work = await _workRepository.Table.Where(x => x.ApplicantId == applicantId).FirstOrDefaultAsync();
+            if (work == null)
+                return 0;
+
+            return EntityCompletionHelper.GetCompletionPercentage(work);
         }
 
         #endregion

@@ -49,4 +49,11 @@ public partial interface IProfileService
     /// The task result contains the profiles
     /// </returns>
     Task<IList<Profile>> GetAllProfilesAsync();
+
+    /// <summary> 
+    /// Get profile completion percentage
+    /// </summary>
+    /// <param name="applicantId"></param>
+    /// <returns></returns>
+    Task<double> GetProfileCompletionPercentageAsync(string applicantId);
 }

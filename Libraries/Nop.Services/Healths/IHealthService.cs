@@ -76,5 +76,12 @@ namespace Nop.Services.Healths
         /// <param name="healths">Healths</param>
         /// <returns>A task that represents the asynchronous operation</returns>
         Task DeleteHealthsAsync(IList<Health> healths);
+
+        /// <summary> 
+        /// Get health completion percentage
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <returns></returns>
+        Task<double> GetHealthCompletionPercentageAsync(int applicantId);
     }
 }

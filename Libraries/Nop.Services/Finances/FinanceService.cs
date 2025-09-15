@@ -1,6 +1,7 @@
 ﻿using Nop.Core;
 using Nop.Core.Domain.Finances;
 using Nop.Data;
+using Nop.Services.Common;
 
 namespace Nop.Services.Finances
 {
@@ -132,6 +133,20 @@ namespace Nop.Services.Finances
         public virtual async Task DeleteFinancesAsync(IList<Finance> finances)
         {
             await _financeRepository.DeleteAsync(finances);
+        }
+
+        /// <summary> 
+        /// Get finance completion percentage
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <returns></returns>
+        public virtual async Task<double> GetFinanceCompletionPercentageAsync(int applicantId)
+        {
+            var finance = await _financeRepository.Table.Where(x => x.ApplicantId == applicantId).FirstOrDefaultAsync();
+            if (finance == null)
+                return 0;
+
+            return EntityCompletionHelper.GetCompletionPercentage(finance);
         }
 
         #endregion

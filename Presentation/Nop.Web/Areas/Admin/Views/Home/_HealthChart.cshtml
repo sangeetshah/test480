@@ -37,8 +37,8 @@
                     data: {
                         labels: ['Filled', 'Empty'],
                         datasets: [{
-                            data: [data.Filled, data.Empty],
-                            backgroundColor: ['#4CAF50', '#f44336']
+                            data: [data.Filled.toFixed(2), data.Empty.toFixed(2)],
+                            backgroundColor: ['#4CAF50', '#E0E0E0']
                         }]
                     },
                     options: {
@@ -46,9 +46,20 @@
                         plugins: {
                             legend: {
                                 position: 'bottom',
+                            },
+                            datalabels: {
+                                color: 'black',       // Label color
+                                font: {
+                                    weight: 'bold',  // Bold text
+                                    size: 12         // (Optional) make it a bit bigger
+                                },
+                                formatter: function(value) {
+                                    return value + '%'; // Show percentage sign
+                                }
                             }
                         }
-                    }
+                    },
+                    plugins: [ChartDataLabels]
                 });
             }
         });
